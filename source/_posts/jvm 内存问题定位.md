@@ -1,10 +1,11 @@
 ---
 title: jvm内存问题定位
-date: 2019-09-02
-categories: 
-- java
+categories:
+  - java
 tags:
-- jvm
+  - jvm
+abbrlink: 25327
+date: 2019-09-02 00:00:00
 ---
 # 前提资料
 ### 内存的定义

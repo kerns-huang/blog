@@ -1,10 +1,11 @@
 ---
 title: jvm cpu 过高问题定位
-date: 2019-09-02
-categories: 
-- java
+categories:
+  - java
 tags:
-- jvm
+  - jvm
+abbrlink: 20495
+date: 2019-09-02 00:00:00
 ---
 
 ## 操作步骤

@@ -1,11 +1,12 @@
 ---
 title: ignite基本操作
-date: 2019-09-02
-categories: 
-- java
+categories:
+  - java
 tags:
-- ignite
-- 内存关系型数据库
+  - ignite
+  - 内存关系型数据库
+abbrlink: 57792
+date: 2019-09-02 00:00:00
 ---
 
 ## 简介

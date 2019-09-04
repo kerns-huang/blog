@@ -1,10 +1,11 @@
 ---
 title: dubbo 学习
-date: 2017-08-23 22:06:16
-categories: 
-- java
+categories:
+  - java
 tags:
-- rpc
+  - rpc
+abbrlink: 17428
+date: 2017-08-23 22:06:16
 ---
 
 ## 问题：

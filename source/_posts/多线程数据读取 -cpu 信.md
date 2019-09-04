@@ -1,10 +1,11 @@
 ---
 title: jvm cpu 过高问题定位
-date: 2019-09-02
-categories: 
-- java
+categories:
+  - java
 tags:
-- 多线程
+  - 多线程
+abbrlink: 20496
+date: 2019-09-02 00:00:00
 ---
 cpu  --> L1缓存-单线程共享，L2缓存 -> 单cpu共享，L3缓存 -- >主内存
 查看 mac电脑的 L2cache 和L3 cache
