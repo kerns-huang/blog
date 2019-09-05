@@ -2,11 +2,11 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 # Site
-title: 温暖的故事
+title: kerns的小窝
 subtitle: 行走在路上，无愧于心。
 description: 努力看书，努力扯淡。
 author: kerns
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -71,7 +71,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: hexo-theme-snippet
 #文章标题
 jsonContent:
     meta: false
