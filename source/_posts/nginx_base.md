@@ -4,8 +4,7 @@ categories:
   - nginx
 tags:
   - nginx
-abbrlink: 60151
-date: 2019-09-07 00:00:00
+date: 2019-09-07 16:00:00
 ---
 
 ### 反向代理配置
