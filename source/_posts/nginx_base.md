@@ -104,4 +104,5 @@ stream {
 
 ```
 https://www.jianshu.com/p/244386221cc5
+https://docs.nginx.com/nginx/admin-guide/load-balancer/tcp-udp-load-balancer/
 ```
