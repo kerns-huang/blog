@@ -62,4 +62,41 @@ server {
 
 
 ### tcp 代理配置
-正常的http代理机制
+默认不开启tcp代理，需要编译时候开启
+```
+cd /usr/local/src
+wget http://nginx.org/download/nginx-1.12.1.tar.gz
+tar zxf nginx-1.12.1.tar.gz
+cd nginx-1.12.1
+./configure --prefix=/usr/local/nginx --with-stream --without-http
+make && make install
+```
+需要添加的配置：
+```
+stream {
+    server {
+        listen 3000;
+        proxy_pass 127.0.0.1:3306;
+
+    # 也支持socket
+    # proxy_pass unix:/var/lib/mysql/mysql.socket;
+    }
+}
+```
+测试的例子，可以考虑测试mysql的链接，这个后续经过自己测试再添加。
+### udp 代理配置
+```
+events {
+    use epoll;
+    worker_connections  1024;
+}
+
+
+stream {
+    server {
+        listen 3000 udp;
+        proxy_pass 127.0.0.1:3001;
+
+    }
+}
+```
