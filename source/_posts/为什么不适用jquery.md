@@ -1,3 +1,13 @@
+---
+title: vue 代码解决
+categories:
+  - node
+tags:
+  - 分布式
+  - 前端
+abbrlink: 57793
+date: 2020-02-24 00:00:00
+---
 # 为什么不用jquey
 
 ## 渲染引擎，js引擎
