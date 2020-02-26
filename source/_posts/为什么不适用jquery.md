@@ -1,5 +1,5 @@
 ---
-title: vue 代码解决
+title: vue 代码解读
 categories:
   - node
 tags:
