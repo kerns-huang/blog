@@ -4,7 +4,8 @@ abbrlink: 49460
 tags:
   - linux
 categories:
-  - 在线运维
+  - 运维
+  - ''
 date: 2020-04-09 21:07:00
 ---
 ### 1.CPU占用最多的前10个进程： 
@@ -23,10 +24,12 @@ ps auxw|head -1;ps auxw|sort -rn -k5|head -10
 
 ### 查看 内存信息
 查看内存的统计信息
+
 ```
 free -h
 ```
 查看某个进程内存的具体使用信息
+
 ```
 pmap -X pid
 
@@ -42,19 +45,23 @@ pmap -X pid
  ```
  
  ### 查看oom 信息
+ 
  ```
  sudo dmesg | grep -i kill | less
  ```
+ 
  ```
- /proc/$PID/oom_adj
+/proc/$PID/oom_adj
 /proc/$PID/oom_score
 /proc/$PID/oom_score_adj
 ```
+
 ```
 ps -eo pid,comm,pmem --sort -rss | awk '{"cat /proc/"$1"/oom_score" | getline oom; print $0"\t"oom}'
 ```
 
  ### 查看硬盘问题
+ 
  ```
  df -lh
  du -sh /*

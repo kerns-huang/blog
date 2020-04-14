@@ -20,8 +20,8 @@ menu:
 - page: rust
   url: /categories/rust/
   icon:   
-- page: 工具
-  url: /categories/工具/
+- page: 运维
+  url: /categories/运维/
   icon:
 - page: 时间轴
   url: /archives/
@@ -42,7 +42,6 @@ carousel:
 
 ## widgets
 widgets:
-  - search
   - notification
   - social
   - category
@@ -121,6 +120,7 @@ links:
   - reddit: https://www.reddit.com/
   - 书籍: https://github.com/DoubleLabyrinth/awesome-programming-books
   - linux命令查询: https://wangchujiang.com/linux-command
+  - linux 快速教程: https://linuxtools-rst.readthedocs.io/zh_CN/latest/base/07_network.html
 
 # 主题自定义个性化配置
 
