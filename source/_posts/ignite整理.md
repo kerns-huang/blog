@@ -1,5 +1,5 @@
 ---
-title: ignite基本操作
+title: ignite整理
 categories:
   - java
 tags:

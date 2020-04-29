@@ -1,5 +1,5 @@
 ---
-title: ignite基本操作
+title: linux基本操作
 categories:
   - linux
 tags:
