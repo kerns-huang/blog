@@ -71,23 +71,11 @@ notification: |-
 social:
  - name: Github
    icon: git
-   href: //github.com/shenliyang
+   href: //github.com/kerns-huang
  - name: 邮箱
    icon: envelope-o
-   href: mailto:snippet@91h5.cc
- - name: 联系QQ
-   icon: qq
-   href: /
- - name: 微信
-   icon: weixin
-   href: /
- - name: QQ群
-   icon: users
-   href: /
- - name: RSS
-   icon: feed
-   href: /atom.xml
-
+   href: yanlei3032@163.com
+   
 ## 文章分类设置
 cate_config:
    show_count: true
