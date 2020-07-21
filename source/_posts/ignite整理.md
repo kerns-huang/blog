@@ -1,10 +1,10 @@
----
 title: ignite整理
 categories:
   - java
 tags:
   - ignite
   - 内存关系型数据库
+  - cache
 abbrlink: 57792
 date: 2019-09-02 00:00:00
 ---
