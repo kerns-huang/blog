@@ -1,4 +1,3 @@
----
 title: jvm内存问题定位
 categories:
   - java
@@ -7,19 +6,8 @@ tags:
 abbrlink: 25327
 date: 2019-09-02 00:00:00
 ---
-# 前提资料
-### 内存的定义
-```
-VSS- Virtual Set Size 虚拟耗用内存（包含共享库占用的内存）
-RSS- Resident Set Size 实际使用物理内存（包含共享库占用的内存）
-PSS- Proportional Set Size 实际使用的物理内存（比例分配共享库占用的内存）
-USS- Unique Set Size 进程独自占用的物理内存（不包含共享库占用的内存）
-```
-### mmap 文件
-```
-https://baike.baidu.com/item/mmap/1322217
-```
-# 内存总览
+# linux 进程 内存查看
+
 ### ps -p $pid -o rss,vsz
 查看应用逻辑内存，和实际物理内存使用。
 ### pmap -x $pid  | sort -n -k3
@@ -48,16 +36,38 @@ gdb --batch --pid 11 -ex "dump memory a.dump 0x7fd488000000 0x7fd488000000+56124
 ### strace 
 
 # 堆内内存查看
+
+## 1 预先防范
+在启动项目的时候添加
+
+```
+-XX:+HeapDumpOnOutOfMemoryError 
+-XX:HeapDumpPath=/temp/dumps 
+```
+这种情况下，一旦内存溢出，会打印一个 *.hprof的文件
+
+## 2 直接打印 .hprof ，线上慎用。
 ```
 jmap -heap 7732
 
 打印堆栈，有个问题，堆栈太大，怎么取分析
 jmap -histo:live -dump:live,format=b,file=accessservice.hprof 20048
-
-tip: 如果内存过大，下一个linux 的mat进行分析，不知道有什么区别，意思是可以在出问题的服务器上分析该问题。
-
-./ParseHeapDump.sh m.hprof  org.eclipse.mat.api:suspects org.eclipse.mat.api:overview org.eclipse.mat.api:top_components。
 ```
+
+## 3 hprof文件分析
+
+mat 内存分析：
+   1: 找到使用内存最多的元素
+   2: 可达性分析
+   3: 谁在引用。
+
+## 相关资料
+
+https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/clopts001.html
+
+https://www.cnblogs.com/cellei/p/12240241.html
+
+
 # 堆外内存查看
 
 安装 google-perftools
@@ -87,3 +97,16 @@ full gc 什么时候触发？
 ### jvm 的内存计算
 
 堆内内存 + 堆外内存+线程使用内存。
+
+# 相关资料
+### 内存的定义
+```
+VSS- Virtual Set Size 虚拟耗用内存（包含共享库占用的内存）
+RSS- Resident Set Size 实际使用物理内存（包含共享库占用的内存）
+PSS- Proportional Set Size 实际使用的物理内存（比例分配共享库占用的内存）
+USS- Unique Set Size 进程独自占用的物理内存（不包含共享库占用的内存）
+```
+### mmap 文件
+```
+https://baike.baidu.com/item/mmap/1322217
+```

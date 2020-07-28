@@ -49,7 +49,7 @@ services:
 127.0.0.1 mongo-rs-1
 ```
 
-### notework的选择，为什么是host 而不是 bridge
+### network的选择，为什么是host 而不是 bridge
 
 主要是如果是brigge 模式，外网访问也会调用mongodb的心跳，但因为两边网络不通，会导致客户端认为mongodb的集群是不成功的。
 先要配置host文件，然后再启动docker，因为host配置默认会复制hosts文件到容器里面。
