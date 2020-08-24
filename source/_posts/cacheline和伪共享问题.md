@@ -3,6 +3,7 @@ author: kerns
 abbrlink: 12254
 tags:
   - cache
+  - 高并发
 categories:
   - java
 date: 2020-07-07 00:17:00
@@ -13,25 +14,28 @@ date: 2020-07-07 00:17:00
 cat /sys/devices/system/cpu/cpu1/cache/index0/coherency_line_size
 ```
 
-### 验证为共享存在。
+### 验证cacheline的存在。
 
-cacheline 的代码验证,如下所示的代码，按照正常的理解我们应该认为第一个循环和第二个循环的效率应该是一样的，但是事实上的差距是10倍以上的查询，这一块其实就是cache line 在帮我们做的缓存。
+cacheline 的代码验证,如下所示的代码，按照正常的理解我们应该认为第一个循环和第二个循环的效率应该是一样的。
 
 ```
-public static void main(String[] args) {
-        int[][] array = new int[64 * 1024][1024];
+ public static void main(String[] args) {
+        int[] arr = new int[64 * 1024 * 1024];
         long start = System.currentTimeMillis();
-        for (int i = 0; i < 64 * 1024; i++)
-            for (int j = 0; j < 1024; j++)
-                array[i][j]++;
-        System.out.println(System.currentTimeMillis() - start);
+        for (int i = 0; i < arr.length; i++) arr[i] *= 3;
+        System.out.println("第一个循环="+(System.currentTimeMillis() - start));
         start = System.currentTimeMillis();
-        for (int i = 0; i < 1024; i++)
-            for (int j = 0; j < 64 * 1024; j++)
-                array[j][i]++;
-        System.out.println(System.currentTimeMillis() - start);
+        for (int i = 0; i < arr.length; i += 16) arr[i] *= 3;
+        System.out.println("第二个循环="+(System.currentTimeMillis() - start));
     }
 ```
+上述的循环，循环2做了循环1 1/16 的工作
+
+![upload successful](/images/pasted-10.png)
+
+### 为什么会出现这个差距
+对于现代的操作系统而言，每次获取缓存，不是以一个字节一个字节去获取，或是一个块，一个块获取
+
 
 ### 解决伪共享的方案一填充long字节。
 
