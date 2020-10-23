@@ -8,13 +8,13 @@ categories:
   - java
 date: 2020-07-07 00:17:00
 ---
-### 查看缓存行的大小。
+# 查看缓存行的大小。
 
 ```Shell
 cat /sys/devices/system/cpu/cpu1/cache/index0/coherency_line_size
 ```
 
-### 验证cacheline的存在。
+# 验证cacheline的存在。
 
 cacheline 的代码验证,如下所示的代码，按照正常的理解我们应该认为第一个循环和第二个循环的效率应该是一样的。
 
@@ -29,15 +29,21 @@ cacheline 的代码验证,如下所示的代码，按照正常的理解我们应
         System.out.println("第二个循环="+(System.currentTimeMillis() - start));
     }
 ```
-上述的循环，循环2做了循环1 1/16 的工作
+上述的循环，循环2做了循环1/16 的工作，但消耗的时间基本等同
 
-![upload successful](/images/pasted-10.png)
+![upload successful](/images/pasted-11.png)
 
-### 为什么会出现这个差距
-对于现代的操作系统而言，每次获取缓存，不是以一个字节一个字节去获取，或是一个块，一个块获取
+## 原因
+对于现代的操作系统而言，每次获取缓存数据到L1缓存，不是以一个字节一个字节去获取，而是一次性获取一个块(cache line)，在64位操作系统里面一个cache line大小为64byte。一个int 4bytes，所以读取16个和一次读取读取一个效率上是一样的。
 
 
-### 解决伪共享的方案一填充long字节。
+# 伪共享问题
+
+## 出现的原因
+如果 两个变量 （a,b） 同时在一个 Cache Line 中，处理器A修改了变量a ，那么处理器B中，这个 CacheLine 失效了，这个时候如果处理器B修改了变量b的话，就必须先提交处理器A的缓存，然后处理器B再去主存中读取数据！这样就出现了问题，a和b在两个处理器上被修改，本应该是一个并行的操作，但是由于缓存一致性，却成为了串行！这样会严重的影响并发的性能！
+
+
+## 解决伪共享的方案一填充long字节。
 
 ```
 package concurrent.falseshare;
@@ -103,6 +109,10 @@ public class FalseShareTest implements Runnable {
     }
 }
 ```
+
+## 解决伪共享方案二 Contended注解
+
+jdk 1.8 之后有效
 
 
 ### 资料

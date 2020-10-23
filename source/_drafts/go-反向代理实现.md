@@ -34,10 +34,4 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
-如上面的代理，我可以把对 http://localhost:8019/api/v1/propaganda/no的访问通过http://localhost:8080/api/v1/propaganda/no实现，单这种情况下我没办法实现对https的代理。
-
-
-
-
-
-
+如上面的代理，我可以把对 http://localhost:8019/api/v1/propaganda/no的访问通过http://localhost:8080/api/v1/propaganda/no实现，但这种情况下我没办法实现对https的代理。
