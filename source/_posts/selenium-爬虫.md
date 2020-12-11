@@ -1,14 +1,18 @@
 title: selenium 爬虫
 author: kerns
 abbrlink: 31378
-date: 2020-09-14 21:13:13
 tags:
+  - 爬虫
+  - ''
+categories:
+  - python
+date: 2020-09-14 21:13:00
 ---
 ## 安装 selenium
 
 pip install -U selenium
 
-ps: 在安装的过程中如果遇到被强的问题的，很容易 timeout
+ps: 在安装的过程中如果遇到被墙的问题的，很容易 timeout
 
 在mac 环境下需要修改下载源
 ```
@@ -26,6 +30,9 @@ index-url=http://mirrors.aliyun.com/pypi/simple/
 trusted-host=mirrors.aliyun.com
 ```
 
+### 内核安装
+[crome](https://chromedriver.chromium.org/)
+
 
 ### selenium 等待页面加载完成。
 
@@ -39,7 +46,7 @@ time.sleep
 ```
 driver.implicitly_wait(10)
 ```
-显示等待，有些时候执行不成功，具体原因还得定位
+显示等待，有些时候执行不成功，具体原因还得定位，在python里面不好用，在java里面挺好用的
 ```
 element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, '//*[@id="su"]'))
@@ -68,6 +75,36 @@ uInput.send_keys("name")
 passInput = dr.find_element_by_id("password")
 passInput.send_keys("pasword")
 dr.find_element_by_class_name("btn-login").click()
+```
+
+### 调用对应的事件
+java:
+```
+Actions action = new Actions(driver);
+action.doubleClick(tds.get(2)).perform();
+```
+
+### 回退和前进
+
+java 回退
+```
+ driver.navigate().back();
+```
+
+java 前进
+```
+ driver.navigate().forward();
+```
+
+### 多页面，切换页面
+
+```
+Set<String> set = driver.getWindowHandles();
+for (String handle : set) {
+    driver.switchTo().window(handle);
+    //获取满足条件的 页面
+}
+                            
 ```
 
 
