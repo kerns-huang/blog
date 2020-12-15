@@ -1,0 +1,2356 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!-- 
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<meta http-equiv="X-UA-Compatible" content="IE=IE8" />
+	-->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Cache-Control" content="no-cache"/>
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<meta http-equiv="Expires" content="Thu, 01 Jan 1970 00:00:01 GMT"/>
+
+	<title>综合信息系统</title>
+
+	<link rel="stylesheet" type="text/css" href="/scripts/ui/skins/Aqua/css/all.css" />
+	<link rel="stylesheet" type="text/css" href="/scripts/ui/skins/Gray/css/all.css" />
+	<link rel="stylesheet" type="text/css" href="/scripts/ui/skins/ligerui-icons.css" />	
+	<link rel="stylesheet" type="text/css" href="/scripts/ui/common.css" />
+	<link rel="stylesheet" type="text/css" href="/scripts/layui/css/layui.css" /> 
+	<link rel="stylesheet" type="text/css" href="/css/end_user/classics/hover.css" />
+	<link rel="stylesheet" type="text/css" href="/scripts/ui/concise_q/concise_q.css?v1.1" />
+	<script type="text/javascript">
+	var __SAVED = true;
+	var G_CTX = '';
+	var G_PARENT_PATH = '';
+	var G_PARENT_ID = '';
+	
+	var G_LOCALE = 'zh_CN';
+	var G_COUNTRY = 'CN';
+	var G_LANGUAGE = 'zh';
+	var iframCrossOriginRedirectUrl = '';
+
+	var G_CHILDREN_FIELD_NAME = 'zzChildren';
+	var G_LEVEL_FIELD_NAME = 'zzLevel';
+	var G_DISPLAY_PATH_FIELD_NAME = 'zzDisplayPath';
+	
+	var GMSG = {
+			'colon': '：',
+			'to': '至',
+			'and': '和',
+			'error': '错误',
+			'unknown.error': '未知错误，请联系管理员.',
+			'system.error': '系统错误，请联系管理员',
+			'error.code': '错误码:',
+			'error.message': '错误信息',
+			'loading': '正在加载...',
+			'loading.form.data': '正在加载表单数据...',
+			'load.data.failed': '加载数据失败!',
+			'prompt.message': '提示信息',
+			'yes': '是',
+			'no': '否',
+			'cancel': '取消',
+			'save': '保存',
+			'search': '搜索',
+			'reset': '重置',
+			'close': '关闭',
+			'confirm': '确定',
+			'confirm.operation': '您确定进行此操作吗？',
+			'operate.success': '操作失败.',
+			'operate.unsuccess': '操作成功.',
+			'cannot.be.same': '不能相同.',
+			'list': '列表',
+			'view': '查看',
+			'add': '新增',
+			'edit': '修改',
+			'delete': '删除',
+			'remove': '移除',
+			'enable': '启用',
+			'disable': '禁用',
+			'batch': '批量',
+			'upload': '上传',
+			'file': '文件',
+			'upload.file': '上传文件',
+			'confirm.delete.one.item': '您确定删除此记录吗？',
+			'confirm.remove.one.item': '您确定移除此记录吗？',
+			'confirm.revoke.one.item': '您确定撤销此记录吗？',
+			'confirm.delete.selected.items': '您确定删除选中的记录吗？',
+			'confirm.remove.selected.items': '您确定移除选中的记录吗？',
+			'confirm.revoke.selected.items': '您确定撤销选中的记录吗？',
+			'error.only.selected.one.item': '该操作仅允许选中一个记录！',
+			'error.not.selected.any.item': '请选择要执行该操作的记录！',
+			'error.system.record.not.allow': '该记录为系统内置记录，不允许进行更新、删除等操作！',
+			'error.disable.record.not.allow': '不允许对禁用的对象操作',
+			'saving': '正在保存数据...',
+			'submitting': '正在提交...',
+			'save.prompt': '您确定离开/关闭此页面吗？请注意：您已经修改了此页面的数据但未保存。',
+			'save.success': '保存成功.',
+			'save.unsuccess': '保存失败.',
+			'delete.success': '删除成功.',
+			'delete.unsuccess': '删除失败.',
+			'remove.success': '移除成功.',
+			'remove.unsuccess': '移除失败.',
+			'revoke.success': '撤销成功.',
+			'revoke.unsuccess': '撤销失败.',
+			'confirm.assign.selected.items': '您确定分配选中的记录吗？',
+			'confirm.unassign.selected.items': '您确定解除选中的记录吗？',
+			'assign.success': '分配成功.',
+			'assign.unsuccess': '分配失败.',
+			'unassign.success': '解除成功.',
+			'unassign.unsuccess': '解除失败.',
+			'valid.success': '校验成功.',
+			'valid.unsuccess': '校验失败.',
+			"cron.expression.invalid": '无效的时间表达式.',
+			'do.not.match': '不匹配',
+			'error.system.record.not.allow': '该记录为系统内置记录，不允许进行更新、删除等操作！',
+			'error.deleted.record.not.allow': '该记录已标记为已删除，不再允许进行更新、删除等操作！',
+			'error.deleted.record.first': '该记录未标记为已删除，在移除之前请先将其标记为已删除!',
+			'error.startdate.not.allow.empty': '开始日期不允许为空.',
+			'error.enddate.not.allow.empty': '结束日期不允许为空.',
+			'error.startdate.not.allow.earlier.today': '开始日期不允许早于今天.',
+			'error.enddate.not.allow.earlier.today': '结束日期不允许早于今天.',
+			'error.enddate.not.allow.earlier.startdate': '结束日期不允许早于开始日期.',
+			'ui.grid.pageStatMessage': '显示: {from}-{to}，共: {total} 条',
+			'ui.grid.pageStatMessage': '显示: {from}-{to}，共: {total} 条',
+			'ui.grid.loadingMessage': '加载中...',
+			'ui.grid.findTextMessage': '查找',
+			'ui.grid.noRecordMessage': '没有符合条件的记录存在',
+			'ui.grid.isContinueByDataChanged': '数据已经改变,如果继续将丢失数据,是否继续?',
+			'ui.grid.cancelMessage': '取消',
+			'ui.grid.saveMessage': '保存',
+			'ui.grid.applyMessage': '应用',
+			'ui.grid.draggingMessage': '{count}行',
+			'ui.tab.closeMessage': '关闭当前页',
+			'ui.tab.closeOtherMessage': '关闭其他页',
+			'ui.tab.closeAllMessage': '关闭所有页',
+			'ui.tab.reloadMessage': '刷新当前页',
+			'desktop': '桌面',
+			'ok':'确定',
+			'dialog.yes': '是',
+			'dialog.no': '否',
+			'dialog.ok': '确定',
+			'dialog.title': '提示',
+			'dialog.cancel': '取消',
+			'dialog.waittingMessage': '正在等待中,请稍候...',
+			'dialog.autoCloseMessage': '{autoClose}秒后自动关闭',
+			'input_prompts': '输入应用名称进行搜索',
+			'select_account':"请选择账号：",
+			'prompt_message':'提示信息',
+			'no_accounts':'无账号！',
+			'no_accounts_agent_start':'无当前应用账号，请到自服务',
+			'no_accounts_agent_url':'代填应用管理',
+			'no_accounts_agent_end':'中新增绑定代填账号。',
+			'no_accounts_sdk':'无当前应用账号，请联系管理员申请账号权限。',
+			'confirm_btn':'确 定'
+	};
+	</script>
+	<script type="text/javascript" src="/scripts/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/scripts/jquery/jquery-migrate-1.4.1.js"></script>
+	<script type="text/javascript" src="/scripts/jquery/jquery.form.js"></script>
+	<script type="text/javascript" src="/scripts/jquery/jquery.base64.js"></script>
+	<script type="text/javascript" src="/scripts/jquery/jquery.fileupload.js"></script>
+	<script type="text/javascript" src="/scripts/jquery-validation/jquery.validate.js"></script> 
+	<script type="text/javascript" src="/scripts/jquery-validation/jquery.metadata.js"></script>
+	<script type="text/javascript" src="/scripts/jquery/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="/scripts/jquery/jquery.cookie.js"></script>
+	<script type="text/javascript">
+	$.extend($.validator.messages, {
+		defaultMessage: '请输入合法的值',
+		required: '不允许为空',
+		remote: '请修正该字段',
+		email: '请输入正确格式的电子邮件',
+		url: '请输入合法的网址',
+		date: '请输入合法的日期', 
+		dateISO: '请输入合法的日期 (ISO)',
+		number: '请输入合法的数字',
+		digits: '只能输入整数',
+		creditcard: '请输入合法的信用卡号',
+		equalTo: '请再次输入相同的值',
+		accept: '请输入拥有合法后缀名的字符串',
+		maxlength: jQuery.validator.format('请输入一个长度最多是 {0} 的字符串'),
+		minlength: jQuery.validator.format('请输入一个长度最少是 {0} 的字符串'),
+		rangelength: jQuery.validator.format('请输入一个长度介于 {0} 和 {1} 之间的字符串'),
+		range: jQuery.validator.format('请输入一个介于 {0} 和 {1} 之间的值'),
+		max: jQuery.validator.format('请输入一个最大为 {0} 的值'),
+		min: jQuery.validator.format('请输入一个最小为 {0} 的值'),
+		notnull: '不能为空',
+		unique: '必须是唯一的',
+		code: '无效的代码格式',
+		ip: '???jquery.validator.message.ip???',
+		myPhone: '请输入正确的手机号码',
+		mobile: '???jquery.validator.message.mobile???',
+		zipCode: '???jquery.validator.message.zipCode???',
+		chinese: '???jquery.validator.message.chinese???'
+	});	
+	</script>
+	<script type="text/javascript" src="/scripts/ui/js/core/base.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/core/inject.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerAccordion.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerBar.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerButton.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerCheckBox.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerCheckBoxList.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerComboBox.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerDateEditor.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerDialog.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerDrag.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerEasyTab.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerFile.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerFilter.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerForm.js?111"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerGrid.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerLayout.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerListBox.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerMenu.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerMenuBar.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerMessageBox.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerPopupEdit.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerRadio.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerRadioList.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerResizable.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerSpinner.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerTab.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerTextBox.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerTip.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerToolBar.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerTree.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/ligerWindow.js"></script>
+	<script type="text/javascript" src="/scripts/ui/js/plugins/option.js"></script>
+	<script type="text/javascript" src="/scripts/ui/vue/vue.min.js"></script>
+	<!-- mergeJS -->
+	<script type="text/javascript" src="/scripts/ui/common.js"></script>
+	<!--[if IE 6]> 
+	<script type="text/javascript" src="/scripts/ui/DD_belatedPNG.js" ></script>
+	<script type="text/javascript"> DD_belatedPNG.fix('img');</script>
+	<![endif]-->
+	<!--[layer]--> 
+	<script type="text/javascript" src="/scripts/layui/layui.all.js?v2"></script>
+	<style type="text/css">
+		.l-table-edit-td-title{padding:4px; font-weight: bold; width: 100px;vertical-align:top;}
+		.l-table-edit-td-input{padding:4px;}
+		.l-button-submit,.l-button-test{width:80px; float:left; margin-left:10px; padding-bottom:2px;}
+		.l-div-center{display:inline-block;_display:inline;*display:inline;zoom:1;margin-left:3px; margin-right:3px;}
+		.l-div-link{display:inline-block;_display:inline;*display:inline;zoom:1;cursor:pointer;cursor:hand;margin-left:3px; margin-right:3px;}
+		.l-link{color:blue; margin-left:2px;margin-right:2px;}
+	</style>
+	
+	<script type="text/javascript"
+		src="/scripts/cryptojs/components/core-min.js"></script>
+	<script type="text/javascript"
+		src="/scripts/cryptojs/components/enc-base64-min.js"></script>
+	<script type="text/javascript"
+		src="/scripts/cryptojs/components/cipher-core-min.js"></script>
+	<script type="text/javascript"
+		src="/scripts/cryptojs/components/mode-ecb-min.js"></script>
+	<script type="text/javascript"
+		src="/scripts/cryptojs/rollups/aes.js"></script>
+	<script type="text/javascript" src="/scripts/ui/common_login.js"></script>
+	<script type="text/javascript"
+		src="/scripts/jquery/jquery.backstretch.js"></script>
+	<link rel="stylesheet" href="css/end_user/classics/hover.css"
+		type="text/css"></link>
+		         
+	<script src="//at.alicdn.com/t/font_809803_wxpqdn7k5eg.js"></script>
+	<script src="//at.alicdn.com/t/font_809803_fmi6zofc7ke.js"></script>
+	<script type="text/javascript" src="/scripts/jquery/jquery.qrcode.js"></script>
+<script type="text/javascript" src="/scripts/jquery/qrcode.js"></script> 
+	<style type='text/css'>
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	font-family: '微软雅黑';
+}
+
+ul li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #0096E6;
+}
+
+body {
+	overflow: hidden;
+}
+
+#box {
+	width: 100%;
+	height: 100%;
+}
+
+#container {
+	width: 100%;
+	height: 100%;
+	min-height: 340px;
+	margin: 0 auto;
+	background-size: 100% 100%;
+}
+filter
+
+
+
+
+:progid
+
+
+
+
+:DXImageTransform
+
+
+
+
+.Microsoft
+
+
+
+
+.gradient
+
+
+
+
+(
+startColorstr
+
+
+=
+#C8ffffff
+,
+endColorstr
+
+
+
+
+=
+#C8ffffff
+
+
+
+
+);
+float
+
+
+
+
+:
+
+
+ 
+
+
+right
+
+
+
+
+;
+margin-top
+
+
+
+
+:
+
+
+ 
+
+
+4%;
+border
+
+
+
+
+:
+
+
+ 
+
+
+1
+px
+
+
+ 
+
+
+solid
+
+
+ 
+
+
+#dedede
+
+
+
+
+;
+margin-right
+
+
+
+
+:
+
+
+ 
+
+
+10%;
+box-shadow
+
+
+
+
+:
+
+
+ 
+
+
+5
+px
+
+
+ 
+
+
+5
+px
+
+
+ 
+
+
+5
+px
+
+
+ 
+
+
+rgba
+
+
+
+
+(0
+,
+0,
+0,
+0
+.3
+
+
+
+
+);
+}
+* /
+	#right {
+	margin: 0 auto;
+	height: 100%
+}
+
+#login_box {
+	margin: 52px auto;
+	position: relative;
+	height: 516px;
+	width: 418px;
+	background: url('/images/end_user/default/backgroud.png')
+		no-repeat; /*兼容IE8*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7Fffffff,
+		endColorstr=#7Fffffff);
+}
+
+#login_top {
+	padding-left: 20%;
+	padding-top: 40%
+}
+
+#login_t img#ewm {
+	position: absolute;
+	margin-left: 355px;
+	margin-top: 35px;
+}
+
+#login_t img#lur {
+	position: absolute;
+	margin-left: 140px;
+	margin-top: 55px;
+}
+
+#login_t img#computer {
+	position: absolute;
+	margin-left: 355px;
+	margin-top: 35px;
+}
+/*title*/
+#login_top .title #tip {
+	font-size: 18px;
+	font-weight: 600;
+	margin-top: 50px;
+	width: 66%;
+	display: inline-block;
+}
+
+#login_top .title a.register {
+	position: absolute;
+	margin-top: 18px;
+}
+
+#login_top .info {
+	margin-top: 35px;
+}
+
+#login_top .info .user, .pwd, .otp {
+	margin-bottom: 7px;
+	border-radius: 3px;
+	height: 35px;
+	width: 245px;
+	background-color: rgb(255, 255, 255);
+}
+
+#login_top .info .otp {
+	margin-top: 20px;
+}
+
+#login_top .info .pwd {
+	margin-top: 20px;
+}
+
+.inputline img {
+	margin-top: 6px;
+	margin-left: 5px;
+}
+
+#login_top .info input {
+	position: absolute;
+	height: 35px;
+	width: 200px;
+	border: none;
+	line-height: 34px;
+	margin-left: 4px;
+	outline: none;
+}
+
+#login_top .info input::-webkit-input-placeholder {
+	font-size: 13px;
+}
+
+#login_top .info input:-moz-placeholder {
+	font-size: 13px;
+}
+
+#login_top .info input::-moz-placeholder {
+	font-size: 13px;
+}
+
+#login_top .info input:-ms-input-placeholder {
+	font-size: 13px;
+}
+
+#login_top .btn {
+	margin-top: -8px;
+	margin-bottom: 30px;
+	font-size: 16px;
+	width: 245px;
+}
+
+#login_top .btn input, #login_top .btn input:FOCUS {
+	cursor: pointer;
+	font-size: 16px;
+	width: 100%;
+	height: 30px;
+	background-color: #1CBA4C;
+	border: none;
+	color: white;
+	border-radius: 5px;
+	transition: all 0.3s ease-in-out;
+}
+
+#login_top .btn input:HOVER {
+	background: #68CAFE;
+	transition: all 0.3s ease-in-out;
+}
+
+#login_top .btn>ul {
+	border: 0px solid #000;
+	padding: 15px 0 0 0;
+	width: 100%;
+}
+
+#login_top .btn>ul>li {
+	float: right;
+	text-align: center;
+	width: 25%;
+	margin-left: 5%;
+}
+
+#login_top .btn>ul>li>a {
+	color: #f1f1f1;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#login_bottom table.login_bottom {
+	margin: 0 auto;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+#login_bottom table.login_bottom tr td {
+	height: 35px;
+	line-height: 25px;
+	text-align: center;
+	padding: 0 20px;
+}
+
+#login_bottom table.login_bottom tr td img {
+	vertical-align: middle;
+}
+
+/*选择登陆方式样式*/
+#choose_loginWay {
+	background-color: #217cab;
+	width: 100%;
+	height: 45px;
+	border-radius: 4px 4px 0px 0px;
+}
+
+.loginName_tab {
+	width: 50px;
+	padding-top: 5px;
+	display: inline-block
+}
+
+.loginName_tab .tab_icon {
+	width: 40px;
+	height: 40px;
+	margin-left: 4px;
+}
+/*选中登陆方式样式*/
+.choose_tab {
+	background-color: #d5e9f4;
+	height: 40px;
+	width: 50px;
+	border-radius: 4px 4px 0px 0px
+}
+
+/*login_box2*/
+#login_box2 {
+	margin: 52px auto;
+	position: relative;
+	height: 516px;
+	width: 418px;
+	background: url('/images/end_user/default/backgroud.png')
+		no-repeat; /*兼容IE8*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7Fffffff,
+		endColorstr=#7Fffffff);
+}
+	#login_box3{margin: 52px auto;position: relative;height: 516px;width: 418px;background: url('/images/end_user/default/backgroud.png') no-repeat;/*兼容IE8*/filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7Fffffff,endColorstr=#7Fffffff);}
+.top {
+	height: 80px;
+	width: 100%;
+}
+
+.top #logo {
+	width: 90%;
+	margin: 0 auto;
+	min-width: 720px;
+}
+
+#login_bottom hr {
+	display: inline-block;
+	width: 70px;
+	vertical-align: middle;
+	margin: 0 10px;
+	color: #ccc;
+}
+
+#login_bottom {
+	color: #7d7c7c;
+}
+
+#login_bottom a {
+	font-size: 14px;
+}
+
+#point {
+	position: absolute;
+	width: 400px;
+	height: 200px;
+	top: 50%;
+	left: 50%;
+	margin-top: -150px;
+	margin-left: -220px;
+	border: 1px solid white;
+	background-color: #f4f7ed;
+	z-index: 4;
+	border-radius: 3px;
+}
+
+.pTop {
+	background: #0080c1;
+	color: white;
+	padding: 7px 0;
+	padding-left: 20px;
+	margin: 5px;
+	font-size: 17px;
+}
+
+.pMid {
+	height: 100px;
+	padding-left: 30px;
+}
+
+.pBottom {
+	height: 45px;
+	padding-left: 150px;
+	background-color: #f4f7ed;
+}
+
+.pBottom input {
+	width: 60px;
+	color: white;
+	background-color: rgb(0, 149, 229);
+	height: 25px;
+	border: none;
+	margin-right: 25px
+}
+
+#mask {
+	display: none;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .7);
+	z-index: 3;
+	left: 0; /*兼容IE8*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,
+		endColorstr=#7f000000);
+}
+
+.bottom_title {
+	width: 100%;
+	height: 30px;
+	border: 0px solid #000;
+	position: relative;
+	top: 20%;
+	color: #fff;
+	text-align: center;
+	font-size: 12px;
+}
+/*验证码*/
+#loginImgCODE {
+	font-family: Arial, 宋体;
+	font-style: italic;
+	font-size: 19px;
+	color: green;
+	border: 0;
+	padding-left: -10px;
+	letter-spacing: 3px;
+	font-weight: bolder;
+	border-right: 1px solid #000;
+	cursor: pointer;
+}
+
+.icon {
+	　　 width: 1em;
+	height: 1em;
+	　　vertical-align: -0.15em;
+	　　fill: currentColor;
+	　　overflow: hidden;
+	　　
+}
+</style>
+
+</head>
+<body>
+	
+	<div id="mask"></div>
+	<div id="box">
+		
+<style type="text/css">
+	*{padding: 0;margin: 0;font-size: 14px;font-family: '寰蒋闆呴粦';}
+	ul li{list-style: none;}
+	a{text-decoration: none;color: black;}
+	#mask{display:none;position: absolute;top: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,.7);z-index: 3;left: 0;/*兼容IE8*/filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);}
+	
+	.tit ul.menu{}
+	.tit ul.menu li{list-style:none;text-align:center;display:inline-block;height:28px;line-height:28px;font-size:15px;margin-top: 2px;border: 0px solid #f00;
+		}
+	.tit ul.menu li button{color:#ccc;border:none;padding:0 15px; height:28px;line-height:28px; }
+	.tit ul.menu li.on button{ color:blue;font-weight:700;};
+	
+	/*弹窗公共样式*/
+	#notice,#timeout_reLogin{position: absolute;width: 450px;height: 240px;top: 50%;left: 50%;margin-top: -150px;margin-left: -220px;border: 1px solid white;background-color: #44ADE7;z-index: 4;border-radius: 3px;}	
+	#notice .pMid{margin-left: 40px;}
+	#timeout_reLogin .pMid{padding-left: 20px;}
+	.pTop{background: #0080c1;color: white;padding: 11px 0;padding-left: 20px;margin: 5px;font-size: 17px;}
+	.pMid{height: 140px;background-color: #f4f7ed;}
+	.pBottom {height: 45px;padding-left: 150px;background-color: #f4f7ed;}
+	.pBottom input{width: 60px;color:white;background-color: rgb(0, 149, 229);height: 25px;border:none;margin-right: 25px}
+	
+	#indexwrap{display: none;}
+	.box{overflow: auto;position: absolute;width: 100%;height: 100%;background-color:white;}
+	.top .userInfo #info_Auth{text-align: right;}
+	.top .userInfo #topWelcome img{width: 20px;height: 20px;vertical-align: bottom;}
+	.top .userInfo #topWelcome table tr td{text-align: right;font-size: 14px;padding: 5px;color: white;}
+	.box .top{height: 60px;width: 100%;}
+	.topContainer{width: 1000px;min-width: 700px;height: 60px;margin: 15px 125px;}
+	.box .top .logo,.userInfo{display: inline-block;}
+	.box .top .userInfo{float: right;margin-top: 25px;}
+	.box .top .userInfo a{color:black;font-size: 14px;}
+	.box .top .userInfo a:hover{color:black;}
+	.box .mid{width: 1170px;margin: 0 auto;position: relative;}
+	
+	ul#operateList {background-color: white;width: 140px;position: absolute;z-index: 2;margin-left: 0px;margin-top:5px;display:none;}
+	ul#operateList li{list-style: none;height: 30px;text-align:left;}
+	.breadcrumb li{float: left;margin-left: 10px;color: #fff;font-weight: bold;cursor: pointer;}
+	.menu.top{background: #4E97D9;box-shadow: 5px 5px 30px #999;height: 40px;}
+	.menu.top li{margin: 0 10px 0 10px;border: 0px solid #f00;}
+	.menu.top .right{float: right;color:#fff;margin-top: 5px;font-size:15px;}
+	
+	/* header 小图标 */
+	.menu_top>.header_logo,.menu_top>.header_logo:FOCUS{margin-left: 2%;width: 770px;background: transparent;overflow: hidden;}
+	.menu_top>.header_logo:HOVER{background: transparent;}
+	.menu_top>.header_logo>ul{width: 99.5%;height: 146%;margin: -18px  0 0 0}
+	.menu_top>.header_logo>ul>li,.menu_top>.header_logo>ul>li:FOCUS{cursor:pointer; width: 15%;height: 100%;background-color: transparent;transition: all 0.3s ease-in-out;}
+	.menu_top>.header_logo>ul>li:HOVER{background-color: #55BBF2;transition: all 0.3s ease-in-out;}
+	.menu_top>.header_logo>ul>li:active{background: #f00;}
+	.menu_top>.header_logo>ul>.active,.menu_top>.header_logo>ul>.active:FOCUS,.menu_top>.header_logo>ul>.active:HOVER,.menu_top>.header_logo>ul>.active:ACTIVE
+	{background: -webkit-linear-gradient(top, #4E97D9 0%, #476B8C 100%);color: #f00;box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5) inset;}
+	.menu_top>.header_logo>ul>li>img{width:68px;margin: 14px 0 0 11px; }
+	#usedAppsList{ display:none;background: #4e97d9;width: 225px;height: 80px;position: absolute; margin-top: 18px;}
+	.app{display:inline-block; padding-right: 3px;padding-left: 3px;}
+	.topAppIconUser{width:48px;height:40px;margin-top: 11px;margin-right: 4px; margin-left: 4px;}
+	.topAppNameUser{text-align:center;font-size:12px}
+	#usedAppsBtn{width:225px;display:none}
+</style>
+<link rel="stylesheet" type="text/css" href="/scripts/layui/css/layui.css" /> 
+<link rel="stylesheet" type="text/css" href="/css/end_user/default/common_header.css" /> 
+<!--[if IE 8.0]>
+	<style type="text/css">
+		.menu li{ padding-right:5px;}
+	</style>
+<![endif]-->
+
+<div class="tit" style="z-index: 100;width: 100%;height: 60px;background: #4E97D9;box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);">
+	 <ul class="menu_top" style="">
+
+
+
+
+
+
+
+	 	
+	 		<li style="margin-left: 10%;width: 770px;cursor: no-drop;overflow: hidden;" title="请登录">
+	 			<img src="/images/end_user/default/index/header/header2.png" style="margin-top: -78px;" height="190" />
+	 		</li>
+	 	 
+	 	
+	</ul> 
+</div>
+<div style="width:90%;">
+	<div style="float:right;">
+		
+	</div>
+	
+</div>
+
+<script type="text/javascript">
+
+
+	  $('#header_user').mouseover(function (){  
+	    $("#header_user_menu").show();
+	}).mouseout(function (){  
+	    $("#header_user_menu").hide();  
+	});  
+	//是否显示绑定认证入口
+	var authBindWays = "".split(",");
+	if(authBindWays.length > 0 && authBindWays[0] != ''){
+		$("#authBindPage").css("display","block")
+	}else{
+		$("#authBindPage").css("display","none")
+	}
+
+	var desktopTimeout = $('#desktopTimeout').html();
+	var mustChangePassword = '';
+	
+	if(mustChangePassword != 'true'){
+		//超时锁屏提示框
+		var timeout_reLogin = function(text){
+			$("#mask").css("display","block");
+			$("#topWelcome").find("a").prop("disabled",true);
+			var notice = '<div id="timeout_reLogin"><div class="pTop">操作超时</div><div class="pMid"><br/></div> <div class="pBottom"  style="padding-left: 150px;"><input type="button" value="确定" class="cancelBtn" style="margin-left: 40px"/></div></div>';
+			$('body').append(notice);
+			$('.pMid').append(text);
+
+			$('.cancelBtn').bind("click",function(){
+				//退出
+				$.setCookie("currentPanelId", 1, 1);
+				top.location ="/logout";
+			});
+		};
+
+		//超时锁屏
+		var gettime = desktopTimeout*60;
+		var timestamp = new Date().getTime();
+		var Refresh = function(){
+			var newtimes = new Date().getTime();
+			if(gettime != null){
+				if((newtimes - timestamp)/1000 > gettime){
+					$("#mask").css("display","block");
+					$("#topWelcome").find("a").prop("disabled",true);
+					timeout_reLogin("桌面操作超时已自动退出登录，如需继续操作请重新登录");
+					clearInterval(init);
+				}
+			}
+		};
+		
+		var init = setInterval(Refresh,5000);
+		$("body").mousedown(function(event){
+			var newtimes = new Date().getTime();
+			timestamp = newtimes;
+		});
+		
+		$("#selfservice_bim").bind("click",function(){
+			window.open("");
+		})
+		function hrefhtml(url){
+			if(url==null || url==""){
+				return;
+			}
+			window.location.href=url;
+		}
+	}
+	
+	/*点击top 的首页*/
+	function firstMenu(){
+		$("#appTable").css("display","none");
+		$("#J_iframe").css("display","none");
+		$(".sysType").css("display","block");
+		$("#breadcrumb_second").remove();
+		$("#logo").fadeIn(500);
+		$("#pageSize").css("display","none");
+	}
+	function getSecondHTML(str,cl){
+		if(cl=='' || cl == null){
+			cl = "notCl()";
+		}
+		var liHtml = '<li id="breadcrumb_second" onclick="'+cl+'">>&nbsp;'+str+'</li>';
+		if($("#breadcrumb_second").html()!=undefined){
+			$("#breadcrumb_second").remove();
+		}
+			$("#breadcrumb").append(liHtml);
+		
+		
+		return liHtml;
+	}
+	function notCl(){
+		$(".sysType").css("display","none");
+	}
+	function goIndex(){
+		window.location.href="/index";
+	}
+	
+	//应用多账号选择
+	//遮罩层
+	var topAccountBind = function(accountList,dataList,pageNow){
+		var title = '提示信息';
+		var text= '无账号！';
+		var text_agent= '';
+		if("false" == "true"){
+			text_agent='无当前应用账号，请到自服务<a id="authTypeBtn" href="http://apphub.bamboocloud.com:8081/self-service/index?activeMenu=my_application.fill&locale=zh_CN">代填应用管理</a>中新增绑定代填账号。';
+		}else{
+			text_agent='无当前应用账号，请到自服务<a style="color: #1493ED;text-decoration: none" id="authTypeBtn" href="/self_service/self_service_view/account">代填应用管理</a>中新增绑定代填账号。';
+		}
+		var text_sdk= '无当前应用账号，请联系管理员申请账号权限。';
+		var btn=[{
+				type:"cancel",
+		    	value:"确 定"
+			}];
+		$('#usedAppsList .app').each(function(i){
+			$(this).bind('click',function(){
+				var n = showAppNum*pageNow+i;
+				//如果账号数大于1才做提示账号选择
+				var accountCount = accountList[n].length;
+				//协议代填2  非代填1
+				var ssoTypeId = dataList[n].ssoTypeId;
+				var isDisabledAccountManagedBySelf = dataList[n].isDisabledAccountManagedBySelf;
+				if(ssoTypeId==''){
+					//协议代填多账号  选择账号
+					if(accountCount>1){
+						createChooseAccount(n,dataList,accountList);
+					}else if(accountCount == 1){
+						//协议代填一个账号
+						joinApp(accountList,dataList,n,0);
+					}else{
+						//协议代填无账号 (提示框)
+						if(isDisabledAccountManagedBySelf){
+							//用户自管理
+							createTextPoint(title,text_agent,btn);
+						}else{
+							//非用户自管理
+							createTextPoint(title,text_sdk,btn);
+						}
+						
+					}
+				}else if(ssoTypeId==''){
+					//非代填应用 SDK LINK
+					if('' == "false"){
+						//不支持sso认证，非代填应用不需要选择账号
+						joinApp_noChoose(dataList,n);
+					}else{
+						//SDK支持账号
+						if(dataList[n].supportSDKAccount){
+							if(accountCount > 1){
+								//SDK多账号 选择账号(有账号)
+								createChooseAccount(n,dataList,accountList);
+							}else if(accountCount == 1){
+								//SDK一个账号 	不选择账号（将账号传到后台）
+								joinApp(accountList,dataList,n,0);
+							}else{
+								//SDK无账号   (提示框)
+								createTextPoint(title,text_sdk,btn);
+								$("#authTypeBtn").bind("click",function(){
+									
+								})
+							}
+						}else{
+							//SDK不支持账号
+							joinApp_noChoose(dataList,n);
+						}
+					}
+				}else if(ssoTypeId==''){
+					
+					var appType = dataList[n].appType;
+					if(appType == '1'){
+						//客户端代填CS
+						//客户端代填CS多账号  选择账号
+						if(accountCount>1){
+							createChooseAccount(n,dataList,accountList);
+						}else if(accountCount == 1){
+							//客户端代填CS一个账号
+							joinApp(accountList,dataList,n,0);
+						}else{
+							//客户端代填CS无账号 (提示框)
+							if(isDisabledAccountManagedBySelf){
+								//用户自管理
+								createTextPoint(title,text_agent,btn);
+							}else{
+								//非用户自管理
+								createTextPoint(title,text_sdk,btn);
+							}
+						}
+					}else{
+						//客户端代填BS
+						//客户端代填BS多账号  选择账号
+						if(accountCount>1){
+							createChooseAccount(n,dataList,accountList);
+						}else if(accountCount == 1){
+							//客户端代填BS一个账号
+							joinApp(accountList,dataList,n,0);
+						}else{
+							//客户端代填BS无账号 (提示框)
+							if(isDisabledAccountManagedBySelf){
+								//用户自管理
+								createTextPoint(title,text_agent,btn);
+							}else{
+								//非用户自管理
+								createTextPoint(title,text_sdk,btn);
+							}
+						}
+					}
+					
+				}else{
+					//LINK方式 只传appId
+					joinApp_noChoose(dataList,n);
+				}
+
+			});
+		});
+
+		
+		
+	};
+	
+	
+	$(function(){
+		if(""=="true"){
+			/*常用应用*/
+			$("#usedAppsBtn").show();
+			$.ajax({
+				type : "POST",
+				url : '/index/find_targetSystemAndAccount',
+				dataType : 'json',
+				success : function(data) {
+					var data = data.accountList;
+					var dataCount = data.length;
+					var dataList = [];
+					var accountList = [];
+
+					for (var i = 0; i < dataCount; i++) {
+						dataList[i] = data[i].systemObj;
+						dataList[i].url = "";
+						accountList[i] = data[i].account;
+					}
+					for(var i=0;i<dataCount;i++){
+						if(dataList[i]){
+							var imgUrl="";
+							if(dataList[i].icon){
+								imgUrl = dataList[i].icon;
+							}
+							var description = '';
+							if(dataList[i].description){
+								description=dataList[i].description;
+							}else{
+								description=dataList[i].name;
+							}
+							
+							var appClass ='app header_app app' + m;
+							var html = "<div class='"+ appClass + "' style='text-align: center;'><img class='topAppIconUser' src='"+imgUrl+"' alt='' title='"+description+"'><div class='topAppNameUser'></div><div class='appPowerUser'></div></div>";
+							$("#usedAppsList").append(html);	
+							m++;
+				
+							//接入应用数据
+							$("#usedAppsList .topAppNameUser").eq(i).html(dataList[i].name);
+
+						}
+					}
+					
+					topAccountBind(accountList,dataList,0);
+
+					//权限控制
+					//账号权限控制开关
+					if('' == 'true'){
+						//开启账号权限控制
+					}else{
+						setLevelController();
+					}
+				
+				}
+			});
+		
+			$("#usedAppsBtn").mouseover(function(){
+				$("#usedAppsList").show();
+			}).mouseout(function(){
+				$("#usedAppsList").hide();
+			});
+			
+			/*大数据视图*/
+			$(".header_logo>ul>li").each(function(i,e){
+				$(this).hover(function(event) {
+					 $(this).find(".select").stop(true);
+		            $(this).find("img").stop(true);
+		            $(this).find("img").fadeOut(0);
+		            $(this).find(".select").animate({marginTop:"-50%"},200);
+		            if($(this).find(".select").find(".wait").html()!=undefined){
+		            	showSysDesktop($(this).attr('name'),'select',$(this).attr('name'));
+		            }
+		        }, function(event) {
+		        	 $(this).find(".select").stop(true);
+			          $(this).find("img").stop(true);
+		        	 $(this).find(".select").stop();
+			            $(this).find(".select").animate({marginTop:"-120%"},200);
+			            $(this).find("img").delay(200).fadeIn(200);
+		        });
+			});
+		
+		}else{
+			$("#usedAppsBtn").hide();
+			
+			$(".header_logo>ul>li").each(function(i,e){
+				$(this).click(function(event) {
+		            var typeId = $(this).attr('name');
+		            		            		            
+					var dataList = [];
+					var accountList = [];
+
+					
+					var j = 0;
+					for (var i = 0; i < noleaderData.length; i++) {
+						var ids = noleaderData[i].systemObj.typeId.split(",");
+						for(var m=0;m<ids.length;m++){
+							if(ids[m] == typeId){
+								dataList[j] = noleaderData[i].systemObj;
+								dataList[j].url = "";
+								accountList[j] = noleaderData[i].account;
+								j++;
+								break;
+							}
+						}
+					}
+					var dataCount = dataList.length;
+					
+					createEndUserHtml(dataList, dataCount, 0, accountList);
+					setButtomCircleUser(dataList, dataCount, accountList);
+					//分页控制
+					pageDivideUser(dataList, dataCount, accountList, false);
+					arrowControllerUser(dataList, dataCount, accountList,false);
+					arrowDisplayUser(dataCount);
+		            
+		        });
+			});
+		}
+		
+
+		  if($(".header_logo").html()!= undefined){
+			  $(".menu_top>.header_logo>ul>li>.frame").live("click",function(){
+					$(this).parent().addClass("on").siblings().removeClass("on");
+					showSysDesktop($(this).parent().attr('name'));
+				}); 
+		  }
+	});
+
+</script>
+
+		<div id="container">
+			<div id='right'>
+				<div class="top">
+					<div id="logo"
+						style="font-size: 25px; padding-top: 35px; color: #0071ad; font-weight: bold; text-align: center;">
+
+
+
+
+
+					</div>
+				</div>
+				<div id="login_box">
+					<div id="login_t">
+						<svg  aria-hidden="true" id="codepx" style="position: absolute;width: 4rem;height: 4rem;padding-left: 35px;padding-top: 30px;cursor: pointer;">
+						<title>扫码登陆</title>
+    　　						<use xlink:href="#icon-erweima"></use>
+    　　						</svg>
+
+
+                             <img
+							src="/images/end_user/default/login_user.png" id='lur'
+							alt="">
+
+
+
+
+					</div>
+					<div id="login_top">
+						<form id="loginform_ldap" name="loginform" method="post"
+							autocomplete="off" action="/login">
+							<input type="hidden" name="module" id="module" value="LDAP">
+							<input type="hidden" name="realm" id="" realm"" value="/">
+							<div class="info">
+								<div class="user inputline" style="position: relative">
+									<img src="/images/end_user/default/user_login.png"
+										alt=""> <img
+										src="/images/end_user/default/line1.png" alt="">
+									<input type="text"
+										placeholder='用户名'
+										id="loginUID" name="loginUID" ltype="text" autocomplete="off"
+										validate="{required:true}">
+								</div>
+								<div class="pwd inputline" style="position: relative">
+									<img src="/images/end_user/default/lock_user.png"
+										style="padding-right: 2px" alt=""> <img
+										src="/images/end_user/default/line1.png" alt="">
+									<span id='loginPWD_text'
+										style="position: absolute; width: 200px; display: block; z-index: 2; font-size: 13px; color: #ccc; height: 34px; line-height: 34px; top: 0; left: 45px;">密码</span>
+									<input id="loginPWD"
+										placeholder='密码'
+										name="loginPWD" type='password' ltype="password"
+										autocomplete="off" validate="{required:true}">
+								</div>
+								<div class="pwd inputline" style="position: relative">
+									<input id="loginCODE" placeholder='验证码' name="loginCODE"
+										type='text' maxlength="4" ltype="password" autocomplete="off"
+										validate="{required:true}"
+										style="z-index: 10; padding-left: 5px; width: 58%; position: relative; top: 0px; left: 0%;">
+									<input type="button" id="loginImgCODE" class="loginImgCODE"
+										onclick="createCode()"
+										style="width: 40.5%; height: 100%; position: relative; top: -35px; left: 58%; border-radius: 3px;"
+										title='点击更换验证码' />
+								</div>
+								<div class="login_msg"
+									style="color: red; text-align: center; margin: -3px 0px 0px -25%; height: 30px;">
+								</div>
+							</div>
+							<div class="btn">
+								<input type="button" id='loginBtn' class=""
+									value="登 录"
+									onclick="f_login_ldap()">
+								<ul>
+									<li><a href="/common/return_rest_register"
+										id="register">申请账号</a></li>
+									<li><a href="/common/return_rest_password"
+										id="restPassword">忘记密码</a></li>
+								</ul>
+							</div>
+						</form>
+					</div>
+
+					<div class="bottom_title" style="">政府办公信息处理中心</div>
+				</div>
+				<div id="login_box2">
+					<div id="login_t">
+						<img src="/images/end_user/default/rt2.png"
+							id='computer' alt="" title="用户名密码登录" style="cursor: pointer;">
+						<img src="/images/end_user/default/login_user.png"
+							id='lur' alt="">
+					</div>
+					<div id="login_top" style="padding-top: 45%">
+						<form id="loginform_phone" name="loginform" method="post"
+							autocomplete="off" action="/login" style="display: black"
+							class="loginform">
+							<input type="hidden" name="module" class="module"
+								value="ValidationCode"> <input type="hidden"
+								name="realm" class="realm" value="/">
+							<div class="info">
+								<div class="user inputline">
+									<img src="/images/end_user/default/mobile_phone.png"
+										alt=""> <img
+										src="/images/end_user/default/line1.png" alt="">
+									<input type="text" id="mobile"
+										placeholder='手机号'
+										class="loginUID" name="loginUID" ltype="text"
+										autocomplete="off" validate="{required:true}">
+								</div>
+								<div class="pwd inputline" style="position: relative">
+									<input type="button" id="send-msg-btn" class="codeSend"
+										onclick=""
+										style="width: 50.5%; height: 100%; position: relative; left: 48%; background-color: #19a6e8; color: white; padding-left: 10px; cursor: pointer; border-radius: 3px;"
+										title='点击发送验证码' value="发送验证码" /> <input id="smsCODE"
+										class="smsCODE"
+										placeholder='验证码'
+										name="loginPWD" type='text' ltype="password"
+										autocomplete="off" validate="{required:true}"
+										style="padding-left: 5px; width: 50%; position: relative; top: -35px; left: 0%;">
+								</div>
+								<div class="login_msg"
+									style="color: red; text-align: center; margin: 0px 0px 0px -25%; height: 50px;">
+								</div>
+							</div>
+							<div class="btn">
+								<input type="button" class='loginBtn'
+									value="登 录"
+									onclick="f_login_phone()">
+								<ul>
+									<li><a href="/common/return_rest_register"
+										id="register">申请账号</a></li>
+									<li><a href="/common/return_rest_password"
+										id="restPassword">忘记密码</a></li>
+								</ul>
+							</div>
+
+						</form>
+					</div>
+
+					<div class="bottom_title" style="top: 22%;">政府办公信息中心</div>
+				</div>
+				
+					<!-- 扫描登陆 -->
+              <div id="login_box3" style="display: none;">
+            	<div id="login_t">
+            	   <img src="/images/end_user/default/rt2.png" id='computer_box' alt="" title="用户名密码登录" style="cursor: pointer;position: relative;float: right;padding-right: 35px;padding-top: 35px;">
+                </div>
+                <div id="login_code" style="padding-top: 30%;text-align: center">
+                   
+                </div>
+                <div style="text-align: center;margin-top: 50px" id="succeed">请使用1call app扫一扫登陆</div>
+
+
+
+				  <div class="bottom_title_code" style="top: 20%;text-align: center;position: relative;color: white;font-size: 12px">
+					   政府办公信息中心
+				  </div>
+            </div>
+				<div id="apphub_info" class="scrollClass"
+					style="text-align: center; margin-top: 200px; margin-left: 20px; font-size: 12px; color: white;">
+				</div>
+			</div>
+
+		</div>
+
+
+	</div> -->
+	</div>
+	<script type='text/javascript'>
+	/* websocket关闭 */
+	var hubapip = 'zh.hzxc.gov.cn/hubsupport';
+	  var websocket = "";
+	window.onload=function(){
+		var h = document.documentElement.clientHeight || document.body.clientHeight;
+		
+		var container = document.getElementById("container");
+		var apphubInfo = document.getElementById("apphub_info");
+		
+		
+		
+		var h1 = h-917;
+		container.style.height = h + "px";
+		apphubInfo.style.marginTop =  h1 + "px";
+	};
+	
+	$(function () {  
+		$.backstretch([
+		               "/images/end_user/default/bg_login_yejing.png",
+		         ], { duration: 3000000, fade: 1000 });
+
+		var protocolStr = document.location.protocol;
+		if(protocolStr == "http:"){
+            if(document.location.hostname == 'zh.hzxc.gov.cn'|| document.location.hostname =='218.108.106.178'){
+                var rdform = '<div style="font-size: 25px;color: white;margin-top: 300px;">为增强政府网站数据安全防护能力区综合信息系统已从本网址迁移到</div><a style="font-size: 25px;color: white;margin: 121px;" href="https://zh.hzxc.gov.cn">https://zh.hzxc.gov.cn，请点击链接进入</a></div>'
+                $("#login_box").empty()
+                $("#login_box").css("background","none")
+                $("#login_box").css("width","818px")
+                $("#login_box").append(rdform)
+            }
+		}
+
+    });  
+	
+//alert('xxxxxx');
+ $("script[src='/scripts/ui/common.js']").remove();
+	//当前支持的登录方式
+	var loginWays = "otp".split(",");
+	if(loginWays.length > 0){
+		for(var i=0;i<loginWays.length;i++){
+			if(loginWays[i]!=''){
+				$("#loginWay_"+loginWays[i]).css("display","inline-block");
+			}else if(loginWays[i]=='qq'){
+				var qqTd='<td id="loginWay_qq"><img src="/images/end_user/default/qq.png" alt=""> <a href="">QQ登录</a></td>'
+				$(".login_bottom tr").append(qqTd);
+			}else if(loginWays[i]==''){
+				//传过来空值，没有其他登录方式
+				$("#login_bottom").css("display","none")
+			}else{
+				
+			}
+		}		
+	}else{
+		$("#login_bottom").css("display","none");
+	}
+		
+	
+	//登录模式切换
+//登录模式切换
+   
+	$('#codepx').bind('click',function(){
+	    $('#login_box').css("display","none");
+	    $('#login_box2').css("display","none");
+	    $('#login_box3').css("display","block");
+	      var key="";
+	    
+
+	    //判断当前浏览器是否支持WebSocket
+	    if('WebSocket' in window){
+	        var uuid = generateUUID();
+            var protocolStr = document.location.protocol;
+            if(protocolStr == "http:"){
+                websocket = new WebSocket("ws://"+hubapip+"/websocket/"+uuid);
+            }
+            else if(protocolStr == "https:"){
+                websocket = new WebSocket("wss://"+hubapip+"/websocket/"+uuid);
+            }
+	    }
+	    else{
+	        alert('Not support websocket')
+	    }
+
+	    //连接发生错误的回调方法
+	    websocket.onerror = function(){
+	        setMessageInnerHTML("error");
+	    };
+
+	    //接收到消息的回调方法
+	    websocket.onmessage = function(event){
+	        var parse = JSON.parse(event.data);
+	        key=parse.rediskey;
+	        var veci = parse.urlStr;
+	      if(parse.status==2){
+	          $("#login_code").html('<svg  aria-hidden="true" id="login_code" style="height: 250px;text-align: center""><use xlink:href="#icon-saomiaochenggong-copy"></use></svg>')
+               $("#succeed").html("扫描成功")
+	      }else if(parse.status==4){
+	    	  websocket.close();
+	    	  $.cookie('BBCloudBAMSession',parse.qrcodeToken)
+	          window.location.href ="https://zh.hzxc.gov.cn/"
+	        }else{
+	          jQuery(function(){
+	              $("#login_code").empty()
+	              jQuery('#login_code').qrcode(veci);
+	          })
+	      }
+
+	    }
+
+	    function generateUUID() {
+	        var d = new Date().getTime();
+	        var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+	            var r = (d + Math.random()*16)%16 | 0;
+	            d = Math.floor(d/16);
+	            return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+	        });
+	        return uuid;
+	    };
+	});
+
+	$('#computer_box').bind('click',function(){
+	    $('#login_box').css("display","block");
+	    $('#login_box2').css("display","none");
+	    $('#login_box3').css("display","none");
+	     $("#login_code").empty()
+	     websocket.close();
+	});
+	
+	$('#login_box2').css("display","none");
+	
+	$('#ewm').bind('click',function(){
+	    $('#login_box2').css("display","block");
+	    $('#login_box').css("display","none");
+	    $('#login_box3').css("display","none");
+	    $("#login_code").empty()
+	});
+	$('#computer').bind('click',function(){
+	    $('#login_box').css("display","block");
+	    $('#login_box2').css("display","none");
+	    $('#login_box3').css("display","none");
+	    $("#login_code").empty()
+	});
+	$('#pawLogin').bind('click',function(){
+	    $('#login_box').css("display","block");
+	    $('#login_box2').css("display","none");
+	    $('#login_box3').css("display","none");
+	    $("#login_code").empty()
+	}) ;
+	var loginWay ='ldap';
+	$(window).load(function() {
+		
+		//IE8支持placeholder属性
+		$('input').placeholder();
+		
+		//切换登陆方式tab页
+		$(".loginName_tab").eq(0).addClass("choose_tab");
+		$(".loginName_tab").eq(0).children().eq(0).css("display","none");
+		$(".loginName_tab").eq(0).children().eq(1).css("display","block");
+		$(".loginName_tab").each(function(){
+			$(this).bind("click",function(){
+				$(this).addClass("choose_tab").siblings().removeClass("choose_tab");
+				$(this).children().eq(0).css("display","none");
+				$(this).children().eq(1).css("display","block");
+				$(".loginName_tab").each(function(){
+					if(!$(this).hasClass("choose_tab")){
+						$(this).children().eq(0).css("display","block");
+						$(this).children().eq(1).css("display","none");
+					}
+				});
+				if($(this).attr("way")=="ldap"){
+					$("#loginform_ldap").css("display","block");
+					$("#loginform_phone").css("display","none");
+					loginWay="ldap";
+				}else if($(this).attr("way")=="phone"){
+					$("#loginform_ldap").css("display","none");
+					$("#loginform_phone").css("display","block");
+					$(".bottom_loginWays").css("margin-top","-15px");
+					loginWay="phone";
+				}
+			})
+			
+		})
+		$(".loginName_tab").each(function(){
+			if($(this).attr("way") == ""){
+				$(this).click();
+			}
+		});
+	
+		$.cookie('forgetPasswordCookie')==null?"":$("#loginUID").val($.cookie('forgetPasswordCookie'));
+	    //IE下默认是第一个输入框获得焦点,取消这个效果
+	    $('#loginform').find($('input')).each(function(){
+	        this.blur();
+	    });
+	
+	  //回车事件
+	    $(document).keydown(function(event) {
+	        var curKey = event.which;
+	        if(curKey == 13){
+	        	if(loginWay=="ldap"){
+	        		f_login_ldap();
+	        	}else if(loginWay=="phone"){
+	        		f_login_phone();
+	        	}
+	            return false;
+	        }
+	    });
+		    
+	    if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE6.0" || navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE7.0" || navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE8.0" || navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE9.0"){
+	        var _placeholder = function(obj,textObj){
+	             obj.blur(function(){
+	                if($(this).attr('value')==''){
+	                    textObj.css('display','block');
+	                }
+	            });
+	            obj.focus(function(){
+	                if($(this).attr('value')==''){
+	                    textObj.css('display','none');
+	                }
+	            });
+	            textObj.bind('click',function(){
+	                $(this).css('display','none');
+	                obj.focus();
+	            });
+	
+	        };
+	        _placeholder($('#loginUID'),$('#loginUID_text'));
+	        _placeholder($('#loginPWD'),$('#loginPWD_text'));
+	    }else{
+	        $('#loginUID_text').css('display','none');
+	        $('#loginPWD_text').css('display','none');
+	    }
+	});
+	
+	
+	var loginform = $("#loginform_ldap");
+	if(loginWay=="ldap"){
+		loginform = $("#loginform_ldap");
+	}else if(loginWay=="phone"){
+		loginform = $("#loginform_phone");
+	}else{}
+	var error = '';
+	$(function(){
+		if (top != self) {
+			top.location.href = location.href;
+			return;
+		} else {
+			$('#loginwrap').show();
+			$('#loginUID').focus();
+			
+		}
+		if(loginWay=="ldap"){
+			loginform.bind('submit', function(){f_login_ldap();return false;});
+		}else if(loginWay=="phone"){
+			loginform.bind('submit', function(){f_login_phone();return false;});
+		}
+		enableSelectBoxes();
+		createCode();//生成验证码
+	});
+	
+	function enableSelectBoxes(){
+	    $('div.selectBox').each(function(){
+	        var selectOptions = $(this).children('ul.selectOptions').children('li.selectOption');
+	        if (window.location.search.indexOf("zh_CN") >= 0) {
+	            $(this).children('span.selected').html($(selectOptions[1]).html());
+	        } else {
+	            if ("zh_CN".indexOf("zh") >= 0) {
+	                $(this).children('span.selected').html($(selectOptions[1]).html());
+	            } else {
+	                $(this).children('span.selected').html($(selectOptions[0]).html());
+	            }
+	        }
+	
+	        $(this).children('span.selected').click(function(){
+	            if($(this).parent().children('ul.selectOptions').css('display') == 'none'){
+	                $(this).parent().children('ul.selectOptions').css('display','block');
+	            } else {
+	                $(this).parent().children('ul.selectOptions').css('display','none');
+	            }
+	        });
+	
+	        $(this).find('li.selectOption').click(function(){
+	            $(this).parent().css('display','none');
+	            $(this).parent().siblings('span.selected').html($(this).html());
+	        });
+	    });
+	}
+	
+	
+	var createPoint = function(text){
+	    $("#mask").css("display","block");
+	    $("#topWelcome").find("a").prop("disabled",true);
+	    var pointHtml = "<div id='point'><div class='pTop'>错误信息</div><div class='pMid'><br></div><div class='pBottom'><input type='button' class='ok' value='确定'/></div></div>";
+	    $("body").append(pointHtml);
+	    $(".ok").bind('click',function(){
+	        $("#mask").css("display","none");
+	        $("#topWelcome").find("a").prop("disabled",false);
+	        $("body div").remove('div[id="point"]');
+	    });
+	    $(".pMid").append(text);
+	};
+	
+	function f_login_ldap() {
+		if(!validate()){
+			$('#loginCODE').focus();
+			return false;
+		}
+		loginform = $("#loginform_ldap");
+	    //loginUID 、loginPWD不能为空
+	    var loginUID = $("#loginUID").val();
+	    var loginPWD = $("#loginPWD").val();
+	    if(loginUID != "" && loginPWD != ""){
+	        var encipher = "AES";
+	        var secret = CryptoJS.enc.Utf8.parse($.randomString(16));
+	        loginform.blur();
+	        G.submitForm(loginform, {
+	            beforeSubmit: function(formData, jqForm) {
+	              createCode()
+	                for (var i in formData) {
+	                    if (formData[i].name == 'loginPWD') {
+	                        if (formData[i].value != null && formData[i].value != "") {
+	                            formData[i].value = CryptoJS.AES.encrypt(formData[i].value, secret, {
+	                                mode: CryptoJS.mode.ECB,
+	                                padding: CryptoJS.pad.Pkcs7
+	                            })
+	                        }
+	                    }
+	                }
+	                formData.push({
+	                    name : 'loginENC',
+	                    value : encipher
+	                });
+	                formData.push({
+	                    name : 'loginSRT',
+	                    value : CryptoJS.enc.Base64.stringify(secret)
+	                });
+	            },
+	            success: function(data) {
+	                if (typeof(data.redirect) != 'undefined') {
+	                    top.location = '' + data.redirect;
+	                } else if (typeof(data.error) != 'undefined') {
+	                	$('.login_msg').html(GMSG['error'] + ': ' + data.error);
+	                }
+	            },
+	            error: function(data){
+	            	var text = $.parseJSON(data.responseText).error;
+	            	$('.login_msg').html(text);
+	            }
+	        });
+	    }else {
+	        var text1 = "用户名或密码不能为空.";
+	        $('.login_msg').html(text1);
+	    }
+	}
+	
+	function f_login_phone(){
+		loginform = $("#loginform_phone");
+		var loginUID = $("#loginform_phone .loginUID").val();
+	    var smsCODE = $("#loginform_phone .smsCODE").val();
+	    var smsCODECount = smsCODE.length;
+	    if(loginUID != "" && smsCODE != ""){
+	    	var encipher = "AES";
+	        var secret = CryptoJS.enc.Utf8.parse($.randomString(16));
+
+	        loginform.blur();
+	        G.submitForm(loginform, {
+	            beforeSubmit: function(formData, jqForm) {
+	                for (var i in formData) {
+	                    if (formData[i].name == 'loginPWD') {
+	                        if (formData[i].value != null && formData[i].value != "") {
+	                            formData[i].value = CryptoJS.AES.encrypt(formData[i].value, secret, {
+	                                mode: CryptoJS.mode.ECB,
+	                                padding: CryptoJS.pad.Pkcs7
+	                            })
+	                        }
+	                    }
+	                }
+	                formData.push({
+	                    name : 'loginENC',
+	                    value : encipher
+	                });
+	                formData.push({
+	                    name : 'loginSRT',
+	                    value : CryptoJS.enc.Base64.stringify(secret)
+	                });
+	            },
+	            success: function(data) {
+	                if (typeof(data.redirect) != 'undefined') {
+	                    top.location = '' + data.redirect;
+	                } else if (typeof(data.error) != 'undefined') {
+	                    G.showError(GMSG['error'] + ': ' + data.error);
+	                }
+	            },
+	            error: function(data){
+	            	var text = $.parseJSON(data.responseText).error;
+	            	$('.login_msg').html(text);
+	            }
+	        });
+	    }else {
+			var text = "手机号或验证码不能为空.";
+			$("#loginform_ldap .loginERROR").css("display","inline-block");
+			$(".login_msg").html(text);
+	    };
+	}
+	
+	var dialog = null;
+	function f_forgot_password() {
+		if (dialog) {
+			dialog.destroy();
+			dialog = null;
+		}
+		dialog = $.ligerDialog.open({
+			title: '忘记密码?', 
+			width: 600,
+			height: 400,
+			url: "common/forgot_password",
+			heightDiff : 0,
+			showMax : false,
+			allowClose : true
+		});
+	}
+	//验证码
+ 	var code ; //在全局定义验证码   
+           //
+        function createCode(){ 
+             code = "";    
+             var codeLength = 4;//验证码的长度   
+             var checkCode = document.getElementById("loginImgCODE");    
+             var random = new Array(2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','J','K','L','M','N','P','Q','R',   
+             'S','T','U','V','W','X','Y','Z');//随机数   
+             for(var i = 0; i < codeLength; i++) {//循环操作   
+                var index = Math.floor(Math.random()*32);//取得随机数的索引（0~35）   
+                code += random[index];//根据索引取得随机数加到code上   
+            }   
+            checkCode.value = code;//把code值赋给验证码   
+        } 
+        //校验验证码   
+        function validate(){   
+            var inputCode = document.getElementById("loginCODE").value.toUpperCase(); //取得输入的验证码并转化为大写     
+            if(inputCode.length <= 0) { //若输入的验证码长度为0
+            	$('.login_msg').html("请填写验证码");
+                return false;
+            }else if(inputCode=="0000"){
+            	$('.login_msg').html("");
+                return true;
+            }
+            else if(inputCode != code ) { //若输入的验证码与产生的验证码不一致时   
+            	createCode();//刷新验证码   
+            	$('.login_msg').html("验证码不正确");
+                return false;
+                document.getElementById("loginCODE").value = "";//清空文本框   
+            }else { //输入正确时   
+            	$('.login_msg').html("");
+                return true;
+            } ;
+        } ;
+        
+        
+        function validateIsempty(value){
+    		value = value.replace(/(^\s*|^\u3000*)|(\s*$|\u3000*$)/g, '');
+    		value = value.replace(/(^\u3000*|^\s*)|(\u3000*$|\s*$)/g, '');
+    		if(value == null || value == "" || value == undefined ){
+    			   return false;
+    		   }else{
+    			   return true;
+    		  }
+    	}
+        
+        /* 发送验证码按钮倒计时 */
+    	var InterValObj;
+    	var count = 60;
+    	var curCount;
+        var msg=false;
+        var arr=false;
+        var oldEmail="";
+    	//timer处理函数 
+    	function SetRemainTime() {
+    		if (curCount == 0) {
+    			window.clearInterval(InterValObj);//停止计时器 
+    			$(".codeSend").removeAttr("disabled");//启用按钮 
+    			$(".codeSend").val("重新发送验证码");
+    			$(".codeSend").css("backgroundColor","#2e82ff");
+    		} else {
+    			
+    			curCount--;
+    			$(".codeSend").val(curCount + "秒后可重新发送");
+    		}
+    	};
+    	
+    	//发送短信
+    	$("#send-msg-btn").click(function(){
+    		var mobile = $('#mobile').val();
+    		var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+    		if(mobile == ''){
+    	    	$(".login_msg").html("<font color='red'>"+"手机号不能为空"+"</font>");
+    	    }else if(mobile.length!=11 || !myreg.test(mobile)){
+    	    	$(".login_msg").html("<font color='red'>"+"请输入有效的手机号码"+"</font>");
+    	    }else{
+    	    	$(".login_msg").html("");
+	    		curCount = count;
+	    		$(".codeSend").attr("disabled", "true");
+	    		$(".codeSend").css("backgroundColor","#ccc");
+	    		$(".codeSend").val(curCount + "秒后可重新发送");
+	    		InterValObj = window.setInterval(SetRemainTime, 1000);
+    	    
+    	    	G.ajax({
+        			url: '/send/send_security_code', 
+    				data : {
+    					'mobile':mobile,
+    				},
+    				success: function(data) {
+    					if(data.code != "999999"){
+    						G.showSuccess("验证码发送成功，请注意查收！");
+    					}
+    					else{
+							G.showError(data.msg);
+						}
+    				}
+    			});
+    	    }
+    		
+	    });
+</script>
+
+<script  type="hidden" src="https://s23.cnzz.com/z_stat.php?id=1275489493&web_id=1275489493" language="JavaScript"></script>
+
+<script type='text/javascript'>
+/* var HTML_HEIGHT = document.documentElement.clientWidth;
+var HTML_WIDTH = document.documentElement.clientHeight; */
+var HTML_HEIGHT =  parseInt(document.documentElement.clientHeight);
+var HTML_WIDTH = parseInt( document.documentElement.clientWidth);
+$(window).resize(function () {initHtmlResize(); });//换屏自适应  
+var isSelfDesktop = '';
+var ctx = '';
+var layer ;
+var roles = "";//角色信息
+var roleCodeList = [];//角色的代码集合
+var role_leader = false;//是否是领导
+$(function(){
+	setApplicationRoles('');//获取并解析用户的角色信息
+	leftTabcDisplay();
+	var cookieEnabled = (navigator.cookieEnabled) ? true : false;
+    if (typeof navigator.cookieEnabled == "undefined" && !cookieEnabled){ 
+        document.cookie = "testcookie";
+        cookieEnabled = (document.cookie.indexOf("testcookie") != -1)? true : false;
+    }
+    if (!cookieEnabled) {
+    	alert("您的浏览器的Cookie功能被禁用, 请开启Cookie功能后使用本系统");
+    }
+    layui.use('layer', function(){
+    	layer = layui.layer;
+    	
+    });   
+
+});
+function initHtmlResize(){
+	 HTML_HEIGHT =  parseInt(document.documentElement.clientHeight);
+	 HTML_WIDTH = parseInt( document.documentElement.clientWidth);
+}
+/*角色权限处理*/
+/*用户的角色信息解析处理*/
+function setApplicationRoles(jsonStr){
+	if(jsonStr != undefined && jsonStr != ""){
+		var roleJson = eval('(' + jsonStr + ')');
+		roles = roleJson;
+		for (var i = 0; i < roleJson.length; i++) {
+			roleCodeList.push(roleJson[i].code);
+		}
+	}
+	role_leader =  isLeader(); 
+}
+//判断是否是领导登陆
+function isLeader(){
+	if(roleCodeList.length>0){
+		for (var i = 0; i < roleCodeList.length; i++) {
+			if("leader"==roleCodeList[i]){
+				return true;
+			}
+		}
+	}else{
+		return false;
+	}
+	return false;
+}
+//左侧消息状态栏显示
+function leftTabcDisplay(){
+	if($(".blank>.tabc").html()!=undefined &&$(".blank>.tabc").html()!="" ){
+		$(".blank>.tabc").find(".schedule").fadeOut(0);
+		$(".blank>.tabc").find(".work").fadeOut(0);
+		if(role_leader){
+			$(".blank>.tabc").find(".tabc-wait").fadeOut(0);
+			$(".blank>.tabc").find(".work").fadeIn();
+		}else{
+			$(".blank>.tabc").find(".leader").remove();
+			$(".blank>.tabc").find(".tabc-wait").fadeOut(0);
+			$(".blank>.tabc").find(".work").fadeIn();
+		}
+	}
+}
+	
+/**
+* 
+* 获取当前时间
+*/
+function p(s) {
+   return s < 10 ?  s: s;
+}
+
+var myDate = new Date();
+//获取当前年
+var year=myDate.getFullYear();
+//获取当前月
+var month=myDate.getMonth()+1;
+//获取当前日
+var date=myDate.getDate(); 
+var h=myDate.getHours();       //获取当前小时数(0-23)
+var m=myDate.getMinutes();     //获取当前分钟数(0-59)
+var s=myDate.getSeconds();  
+
+var now_date=year+'-'+p(month)+"-"+p(date)+" "+p(h)+':'+p(m)+":"+p(s);
+var now_date_Schedule=year+'年'+p(month)+"月"+p(date)+"  星期"+  "日一二三四五六".charAt(new Date().getDay());
+var change_date = function(days) {  
+    // 参数表示在当前日期下要增加的天数  
+    var now = new Date();  
+    // + 1 代表日期加，- 1代表日期减  
+    now.setDate((now.getDate() + 1) - 1 +days);  
+    var year = now.getFullYear();  
+    var month = now.getMonth() + 1;  
+    var day = now.getDate();  
+    if (month < 10) {  
+        month =month;  
+    }  
+    if (day < 10) {  
+        day =  day;  
+    }  
+
+    return year + '-' + month + '-' + day;  
+};  
+/**
+ * 时间转换为时间戳  格式为 2018-01-01 10:10:10
+ */
+function dateForTimeStamp(date){
+	var stringTime =date;
+	var timestamp2 = Date.parse(new Date(stringTime));
+	timestamp2 = timestamp2 / 1000;
+	
+	return timestamp2;
+}
+//时间戳转换成时间
+function timeStampFordate(time){
+	var timestamp3 = 1514202203 + 6 *10*5;
+	var newDate = new Date();
+	newDate.setTime(timestamp3 * 1000);
+	// Wed Jun 18 2014 
+	console.log(newDate.toDateString());
+	// Wed, 18 Jun 2014 02:33:24 GMT 
+	console.log(newDate.toGMTString());
+	// 2014-06-18T02:33:24.000Z
+	console.log(newDate.toISOString());
+	// 2014-06-18T02:33:24.000Z 
+	console.log(newDate.toJSON());
+	// 2014年6月18日 
+	console.log(newDate.toLocaleDateString());
+	// 2014年6月18日 上午10:33:24 
+	console.log(newDate.toLocaleString());
+	// 上午10:33:24 
+	console.log(newDate.toLocaleTimeString());
+	// Wed Jun 18 2014 10:33:24 GMT+0800 (中国标准时间)
+	console.log(newDate.toString());
+	// 10:33:24 GMT+0800 (中国标准时间) 
+	console.log(newDate.toTimeString());
+	// Wed, 18 Jun 2014 02:33:24 GMT
+	console.log(newDate.toUTCString());
+	
+	return newDate.toISOString();
+}
+
+
+/*时间戳转换为时间  日程代办专用*/
+function add0(m){return m<10?'0'+m:m }
+function format(shijianchuo)
+{
+	//shijianchuo是整数，否则要parseInt转换
+	var time = new Date(shijianchuo);
+	var y = time.getFullYear();
+	var m = time.getMonth()+1;
+	var d = time.getDate();
+	var h = time.getHours();
+	var mm = time.getMinutes();
+	var s = time.getSeconds();
+	//return y+'-'+add0(m)+'-'+add0(d)+' '+add0(h)+':'+add0(mm)+':'+add0(s);
+	return add0(h)+':'+add0(mm);
+}
+/*时间戳转换为时间  日程代办专用*/
+function formatYYD(shijianchuo)
+{
+	//shijianchuo是整数，否则要parseInt转换
+	var time = new Date(shijianchuo);
+	var y = time.getFullYear();
+	var m = time.getMonth()+1;
+	var d = time.getDate();
+	var h = time.getHours();
+	var mm = time.getMinutes();
+	var s = time.getSeconds();
+	return y+'-'+add0(m)+'-'+add0(d);
+	//return add0(h)+':'+add0(mm);
+}
+/** 
+ * @param 页面日期控件取得的日期（yyyy-mm-dd） 
+ * @author rockjava 
+ * @date 2008-12-23 
+ * */  
+function getMonDayAndSunDay(datevalue){  
+    var dateValue = datevalue;  
+    var arr = dateValue.split("-")  
+    //月份-1 因为月份从0开始 构造一个Date对象  
+    var date = new Date(arr[0],arr[1]-1,arr[2]);  
+  
+    var dateOfWeek = date.getDay();//返回当前日期的在当前周的某一天（0～6--周日到周一）  
+  
+    var dateOfWeekInt = parseInt(dateOfWeek,10);//转换为整型  
+  
+    if(dateOfWeekInt==0){//如果是周日  
+        dateOfWeekInt=7;  
+    }  
+    var aa = 7-dateOfWeekInt;//当前于周末相差的天数  
+  
+    var temp2 = parseInt(arr[2],10);//按10进制转换，以免遇到08和09的时候转换成0  
+    var sunDay = temp2+aa;//当前日期的周日的日期  
+    var monDay = sunDay-6//当前日期的周一的日期 
+    var tueDay = sunDay-5//当前日期的周2的日期
+    var wedDay = sunDay-4//当前日期的周3的日期 
+    var thurDay = sunDay-3//当前日期的周4的日期 
+    var friDay = sunDay-2//当前日期的周5的日期 
+    var staDay = sunDay-1//当前日期的周6的日期 
+ 
+  
+    var monDayDate = new Date(arr[0],arr[1]-1,monDay);  
+    var tueDayDate = new Date(arr[0],arr[1]-1,tueDay);  
+    var webDayDate = new Date(arr[0],arr[1]-1,wedDay);  
+    var thurDayDate = new Date(arr[0],arr[1]-1,thurDay);  
+    var friDayDate = new Date(arr[0],arr[1]-1,friDay);  
+    var staDayDate = new Date(arr[0],arr[1]-1,staDay);  
+    var sunDayDate = new Date(arr[0],arr[1]-1,sunDay);  
+  
+    var mm = parseInt(monDayDate.getMonth())+1;//月份+1 因为月份从0开始  
+    var tm = parseInt(tueDayDate.getMonth())+1;//月份+1 因为月份从0开始  
+    var wm = parseInt(webDayDate.getMonth())+1;//月份+1 因为月份从0开始  
+    var thm = parseInt(thurDayDate.getMonth())+1;//月份+1 因为月份从0开始  
+    var fm = parseInt(friDayDate.getMonth())+1;//月份+1 因为月份从0开始  
+    var sam = parseInt(staDayDate.getMonth())+1;//月份+1 因为月份从0开始  
+    var sm = parseInt(sunDayDate.getMonth())+1;  
+  
+  //alert("星期一的日期："+startDate.getYear()+"-"+sm+"-"+startDate.getDate());  
+ // alert("星期日的日期："+endDate.getYear()+"-"+em+"-"+endDate.getDate());  
+    var mon = mm+"月"+monDayDate.getDate()+"日";  
+    var tue = tm+"月"+tueDayDate.getDate()+"日"; 
+    var web = wm+"月"+webDayDate.getDate()+"日"; 
+    var thur = thm+"月"+thurDayDate.getDate()+"日"; 
+    var fri = fm+"月"+friDayDate.getDate()+"日"; 
+    var sta = sam+"月"+staDayDate.getDate()+"日"; 
+    var sun = sm+"月"+sunDayDate.getDate()+"日";  
+    var result = new Array();  
+    result.push(mon);  
+    result.push(tue);  
+    result.push(web);  
+    result.push(thur);  
+    result.push(fri);  
+    result.push(sta);  
+    result.push(sun);  
+      
+    return result;  
+}  
+
+/*日期格式化*/
+Date.prototype.Format = function (fmt) { //author: meizz 
+    var o = {
+        "M+": this.getMonth() + 1, //月份 
+        "d+": this.getDate(), //日 
+        "h+": this.getHours(), //小时 
+        "m+": this.getMinutes(), //分 
+        "s+": this.getSeconds(), //秒 
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+        "S": this.getMilliseconds() //毫秒 
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
+function dateFormat(shijianchuo)
+{
+	//shijianchuo是整数，否则要parseInt转换
+	var time = new Date(shijianchuo);
+	var y = time.getFullYear();
+	var m = time.getMonth()+1;
+	var d = time.getDate();
+	var h = time.getHours();
+	var mm = time.getMinutes();
+	var s = time.getSeconds();
+	return y+'-'+add0(m)+'-'+add0(d)+' '+add0(h)+':'+add0(mm)+':'+add0(s);
+	//return add0(h)+':'+add0(mm);
+}
+
+/**
+ * base64 工厂
+ */
+var Base64 = {
+
+	    // private property
+	    _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+
+	    // public method for encoding
+	    encode: function(input) {
+	        var output = "";
+	        var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+	        var i = 0;
+
+	        input = Base64._utf8_encode(input);
+
+	        while (i < input.length) {
+
+	            chr1 = input.charCodeAt(i++);
+	            chr2 = input.charCodeAt(i++);
+	            chr3 = input.charCodeAt(i++);
+
+	            enc1 = chr1 >> 2;
+	            enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+	            enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+	            enc4 = chr3 & 63;
+
+	            if (isNaN(chr2)) {
+	                enc3 = enc4 = 64;
+	            } else if (isNaN(chr3)) {
+	                enc4 = 64;
+	            }
+
+	            output = output + this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) + this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+
+	        }
+
+	        return output;
+	    },
+
+	    // public method for decoding
+	    decode: function(input) {
+	        var output = "";
+	        var chr1, chr2, chr3;
+	        var enc1, enc2, enc3, enc4;
+	        var i = 0;
+
+	        input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+
+	        while (i < input.length) {
+
+	            enc1 = this._keyStr.indexOf(input.charAt(i++));
+	            enc2 = this._keyStr.indexOf(input.charAt(i++));
+	            enc3 = this._keyStr.indexOf(input.charAt(i++));
+	            enc4 = this._keyStr.indexOf(input.charAt(i++));
+
+	            chr1 = (enc1 << 2) | (enc2 >> 4);
+	            chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+	            chr3 = ((enc3 & 3) << 6) | enc4;
+
+	            output = output + String.fromCharCode(chr1);
+
+	            if (enc3 != 64) {
+	                output = output + String.fromCharCode(chr2);
+	            }
+	            if (enc4 != 64) {
+	                output = output + String.fromCharCode(chr3);
+	            }
+
+	        }
+
+	        output = Base64._utf8_decode(output);
+
+	        return output;
+
+	    },
+
+	    // private method for UTF-8 encoding
+	    _utf8_encode: function(string) {
+	        string = string!=undefined&&string.replace(/\r\n/g, "\n");
+	        var utftext = "";
+
+	        for (var n = 0; n < string.length; n++) {
+
+	            var c = string.charCodeAt(n);
+
+	            if (c < 128) {
+	                utftext += String.fromCharCode(c);
+	            } else if ((c > 127) && (c < 2048)) {
+	                utftext += String.fromCharCode((c >> 6) | 192);
+	                utftext += String.fromCharCode((c & 63) | 128);
+	            } else {
+	                utftext += String.fromCharCode((c >> 12) | 224);
+	                utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+	                utftext += String.fromCharCode((c & 63) | 128);
+	            }
+
+	        }
+
+	        return utftext;
+	    },
+
+	    // private method for UTF-8 decoding
+	    _utf8_decode: function(utftext) {
+	        var string = "";
+	        var i = 0;
+	        var c = c1 = c2 = 0;
+
+	        while (i < utftext.length) {
+
+	            c = utftext.charCodeAt(i);
+
+	            if (c < 128) {
+	                string += String.fromCharCode(c);
+	                i++;
+	            } else if ((c > 191) && (c < 224)) {
+	                c2 = utftext.charCodeAt(i + 1);
+	                string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+	                i += 2;
+	            } else {
+	                c2 = utftext.charCodeAt(i + 1);
+	                c3 = utftext.charCodeAt(i + 2);
+	                string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+	                i += 3;
+	            }
+
+	        }
+
+	        return string;
+	    }
+
+	}
+</script>
+</body>
+</html>
+
