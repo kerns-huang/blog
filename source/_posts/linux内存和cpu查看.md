@@ -65,9 +65,19 @@ ps -eo pid,comm,pmem --sort -rss | awk '{"cat /proc/"$1"/oom_score" | getline oo
  ```
  df -lh
  du -sh /*
+ du -h --max-depth=0 your_dest_dir/*
  lsof |grep delete
  du|sort -nr|more
  ```
+ 
+ ### 查看当前文件夹下文件大小
+ 
+ ```
+ ls -htla
+ 
+ ```
+ 
+ 
  ### java应用程序查看内存
  
 https://qsli.github.io/2017/12/02/google-perf-tools/

@@ -107,9 +107,29 @@ for (String handle : set) {
                             
 ```
 
+## selenium 反爬机制
+
+目前在爬取 问财 网站的时候遇到了 反爬的机制，反爬机制的原因是因为selenium的一个特征机制被识别，导致爬虫失效。
+可以添加 如果配置项消除 selenium 特征。
+
+```
+chrome_options.add_argument("--disable-blink-features")
+chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+```
+
+
+
+
 
 ## selenium方式的优劣
 
 * 优势：虽然通过浏览器内核，是简单的通过http模拟是媲美不了的，如果ajax很多，而且有很多拼接操作的页面，通过http请求，分析各个接口的含义需要花很多的时间，这个时候通过selenium通过浏览器内核直接抓取页面元素会方便很多。
 
 * 劣势：比如模拟表单提交，如果ajax请求很少，或者没有，只有一次请求，但是又有很多动态的元素生成，这种情况下直接分析请求报文是更简单的操作。
+
+
+
+## 参考资料
+
+
+http://www.python66.com/seleniumjiaocheng/182.html
