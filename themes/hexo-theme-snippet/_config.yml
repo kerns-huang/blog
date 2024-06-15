@@ -19,7 +19,10 @@ menu:
   icon: 
 - page: rust
   url: /categories/rust/
-  icon:   
+  icon:  
+- page: python
+  url: /categories/python/
+  icon:     
 - page: 运维
   url: /categories/运维/
   icon:

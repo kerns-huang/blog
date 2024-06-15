@@ -1,5 +1,7 @@
+---
 title: mysql 中文全文检索
 author: kerns
+abbrlink: 49787
 date: 2022-10-26 17:37:08
 tags:
 ---
