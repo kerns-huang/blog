@@ -22,7 +22,10 @@ menu:
   icon:  
 - page: python
   url: /categories/python/
-  icon:     
+  icon: 
+- page: ai
+  url: /categories/ai/
+  icon:        
 - page: 运维
   url: /categories/运维/
   icon:

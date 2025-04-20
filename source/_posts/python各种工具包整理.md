@@ -19,9 +19,27 @@ date: 2025-01-09 09:42:00
     - selenium
   - 日志
   	- loguru
-  - 科学计算
+  - 数据处理
   	- pandas
     - numpy
   - 画图
     - pillow
+  - 动态包导入
+    - importlib
+  - 文件操作
+    - shutil
+  - yaml配置操作
+  	- ruamel.yaml
+  - 命令行输入
+    - cmd2
+  - 链上交互
+    - web3
+  - 声音读区
+    - sounddevice
+    - soundfile
+  - 进度条
+    - tqdm
+  - 环境变量读取
+  	- dotenv
+    
 {% endpullquote %}
