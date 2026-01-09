@@ -1,4 +1,3 @@
----
 title: linux基本操作
 categories:
   - linux
@@ -7,7 +6,6 @@ tags:
 abbrlink: 57792
 date: 2019-09-05 00:00:00
 ---
-
 ### 1.CPU占用最多的前10个进程： 
 ```
 ps auxw|head -1;ps auxw|sort -rn -k3|head -10 
@@ -37,6 +35,13 @@ pmap -X pid
 ```
  cat /proc/sys/fs/file-nr
  ```
+
+### 查看进程详细信息
+
+```
+ll /proc/pid
+``` 
+ 
  ### 查看tcp连接数
  ```
  netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'

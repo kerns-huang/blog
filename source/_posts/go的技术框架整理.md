@@ -24,5 +24,21 @@ date: 2025-02-27 21:15:00
     - [goframe](https://goframe.org.cn/)
   - 图形验证码
     - [base64Captcha](https://github.com/mojocn/base64Captcha)
+  - 客户端
+    - Wails
+  - 代理
+    - goproxy
     
 {% endpullquote %}
+
+# 详细说明
+
+## 客户端
+
+### [wails](https://github.com/wailsapp/wails)
+   Wails 是一个用于构建跨平台桌面应用的框架，类似 Electron，但使用 Go 作为后端。
+
+## 代理端
+
+### [goproxy](https://github.com/elazarl/goproxy)
+

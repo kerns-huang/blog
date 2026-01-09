@@ -4,10 +4,11 @@ abbrlink: 12070
 tags:
   - ai
 categories:
-  - python
+  - ai
 date: 2025-03-29 10:23:00
 ---
-### ai 部署
+# 开发工具
+
 {% pullquote mindmap mindmap-md %}
 - ai开发
   - ai本地部署和应用
@@ -16,6 +17,12 @@ date: 2025-03-29 10:23:00
     - SGLang
     - [Xinfernce](https://inference.readthedocs.io/zh-cn)
     - [LMStudio](https://lmstudio.ai/) 
+  - ai agent工作流
+     - [dify](https://dify.ai/) 
+     - [Coze](https://www.coze.com/)
+     - cherry studio
+     - [anything llm](https://anythingllm.com/)
+     - [n8n](https://n8n.io/)
   - Embedding（向量模型）
     - 通用文本
       - BGE-M3（智源研究院）
@@ -25,12 +32,12 @@ date: 2025-03-29 10:23:00
       - xiaobu-embedding-v2
       - M3E-Turbo
       - stella-mrl-large-zh-v3.5-1792
+  - 预测模型
+    - XGBoost
+    - LightGBM
+    - CatBoost
   - RAG(检索增强生成)
     - NativeRAG
-    - [dify](https://dify.ai/)
-    - [anything llm](https://anythingllm.com/)
-    - cherry studio
-    - Coze
   - ai聊天入口
     - 客户端
       - chat box
@@ -41,6 +48,7 @@ date: 2025-03-29 10:23:00
       - LobeChat
   - 自助式数据报表开发
     - text2sql
+    - [sqlbot](https://dataease.cn/sqlbot)
   - ai微调
     - [LLama-Factory](https://github.com/hiyouga/LLaMA-Factory)
   - 多任务应用开发
@@ -57,26 +65,20 @@ date: 2025-03-29 10:23:00
      - [huggingface](https://huggingface.co/spaces/mteb/leaderboard)
 {% endpullquote %}
 
+
+# 详解
+
+### ai agent工作流工具整理
+
+dify 开源，可以私有化搭建
+coze 抖音平台，方便快速搭建。
+
 ### 提示词工程
 
 大模型会有幻觉，知识图谱可以人工检测，生成知识库。
 chatBI，通过聊天生成报表。
 firecrawl 把文件转成markdown，灌输给ai
 
-### RAG(检索增强生成)
-
-#### 基本概念
-
-• 检索增强生成，是一种结合信息检索（Retrieval）和文本生
-成（Generation）的技术
-• RAG技术通过实时检索相关文档或信息，并将其作为上下文
-输入到生成模型中，从而提高生成结果的时效性和准确性。
-
-#### 优势
-
-• 解决知识时效性问题：大模型的训练数据通常是静态的，无
-法涵盖最新信息，而RAG可以检索外部知识库实时更新信息。
-• 减少模型幻觉：通过引入外部知识，RAG能够减少模型生成
-虚假或不准确内容的可能性。
-• 提升专业领域回答质量：RAG能够结合垂直领域的专业知识
-库，生成更具专业深度的回答
+### 常用预测（分类，回归）模型
+    分类算法：LR，SVN，KNN
+    树模型：GBDT，XGBoost，LightGBM，CatBoost，NGBoost

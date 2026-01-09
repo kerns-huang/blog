@@ -25,6 +25,9 @@ menu:
   icon: 
 - page: ai
   url: /categories/ai/
+  icon:  
+- page: 区块链
+  url: /categories/区块链/
   icon:        
 - page: 运维
   url: /categories/运维/
