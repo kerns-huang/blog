@@ -53,6 +53,9 @@ date: 2025-01-09 09:42:00
   - mq
     - pyzmq
   - platformdirs  
+  - 命令行交互
+    - rich
+    - click
     
 {% endpullquote %}
 
