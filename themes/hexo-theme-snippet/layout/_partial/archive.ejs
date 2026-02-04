@@ -33,9 +33,9 @@
         </div>
         <p class="brief">
             <% if(post.excerpt) { %>
-            <%= strip_html(post.excerpt) + '…' %>
+            <%= decodeHtmlEntities(strip_html(post.excerpt) + '…') %>
             <% } else { %>
-            <%= truncate(strip_html(post.content), {length: theme.excerptLength || 120, separator: ''}) %>
+            <%= decodeHtmlEntities(truncate(strip_html(stripCodeBlocks(post.content)), {length: theme.excerptLength || 120, separator: ''})) %>
             <% } %>
         </p>
     </div>

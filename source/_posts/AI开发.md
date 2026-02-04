@@ -1,10 +1,13 @@
 title: AI开发
 author: kerns
+abbrlink: 32199
 date: 2025-04-25 09:24:11
 tags:
 ---
-# 代码 LLM 模型选择
 
+
+
+# 代码 LLM 模型选择
 ## 闭源模型
 
 Qwen-Turbo：
@@ -20,4 +23,3 @@ Qwen*-coder：能力强，接近一线大模型，
 CodeGeex：智谱开源的代码大模型，
 SqlCoder：专为sql生成的大模型，维护更新慢。
 DeepSeek-Coder：
-

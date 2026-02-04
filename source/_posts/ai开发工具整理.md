@@ -11,6 +11,8 @@ date: 2025-03-29 10:23:00
 
 {% pullquote mindmap mindmap-md %}
 - ai开发
+  - 多进程ai开发
+  - [vibe-kanban](https://github.com/BloopAI/vibe-kanban)
   - ai本地部署和应用
     - ollama
     - [vllm](https://github.com/vllm-project/vllm)

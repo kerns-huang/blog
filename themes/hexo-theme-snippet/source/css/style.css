@@ -914,6 +914,9 @@ pre {
   left: 0;
   bottom: -1px;
 }
+.widget .tag-cloud {
+  word-wrap: break-word;
+}
 .widget .tag-cloud a {
   border: 1px solid #ebebeb;
   padding: 2px 7px;
@@ -924,9 +927,9 @@ pre {
   margin: 0 5px 5px 0;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+  word-break: break-all;
 }
 .widget .tag-cloud a:hover {
   color: #fff;
@@ -959,8 +962,17 @@ pre {
 .widget .social a i {
   font-size: 20px;
 }
+.widget .friends-link {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 15px;
+  word-wrap: break-word;
+}
 .widget .friends-link a {
-  margin-right: 15px;
+  margin-right: 0;
+  white-space: normal;
+  word-break: break-all;
+  flex-shrink: 0;
 }
 .widget #search-form {
   position: relative;

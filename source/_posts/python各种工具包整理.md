@@ -56,6 +56,10 @@ date: 2025-01-09 09:42:00
   - 命令行交互
     - rich
     - click
+  - http请求
+      - requests
+      - aiohttp
+      - [niquests](https://github.com/jawah/niquests)  
     
 {% endpullquote %}
 

@@ -1059,6 +1059,8 @@ pre {
     }
 
     .tag-cloud {
+        word-wrap: break-word;
+
         a {
             .border(#ebebeb);
             padding: 2px 7px;
@@ -1068,7 +1070,9 @@ pre {
             display: inline-block;
             margin: 0 5px 5px 0;
             .transition;
-            .text-ellipsis();
+            max-width: 100%;
+            white-space: normal;
+            word-break: break-all;
 
             &:hover {
                 color: @white_color;
@@ -1106,8 +1110,16 @@ pre {
     }
 
     .friends-link {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 15px;
+        word-wrap: break-word;
+
         a {
-            margin-right: 15px
+            margin-right: 0;
+            white-space: normal;
+            word-break: break-all;
+            flex-shrink: 0;
         }
     }
 
